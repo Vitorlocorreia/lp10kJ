@@ -257,6 +257,9 @@ body {
   text-align: center;
   max-width: 680px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .hero-main-title {
   font-family: var(--font-heading);
@@ -265,6 +268,7 @@ body {
   font-weight: 900;
   letter-spacing: -0.5px;
   margin-bottom: 14px;
+  width: 100%;
 }
 .hero-description {
   font-size: clamp(0.95rem, 2.6vw, 1.12rem);
@@ -272,12 +276,21 @@ body {
   color: #d1d5db;
   margin-bottom: 20px;
   padding: 0 4px;
+  width: 100%;
 }
 
 /* Hero Immediate Action Button */
+.hero-cta-group,
 .hero-cta-immediate {
-  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto 24px auto;
+  text-align: center;
 }
+
 .btn-gold-action {
   position: relative;
   display: flex;
@@ -285,6 +298,8 @@ body {
   justify-content: center;
   gap: 10px;
   width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
   padding: 17px 20px;
   background: var(--gold-gradient);
   border: none;
@@ -337,6 +352,7 @@ body {
   font-size: 0.72rem;
   color: var(--text-dim);
   text-align: center;
+  width: 100%;
 }
 
 /* VSL Player */
@@ -346,7 +362,9 @@ body {
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.8), 0 0 25px rgba(229, 169, 60, 0.15);
-  margin-bottom: 24px;
+  margin: 0 auto 24px auto;
+  max-width: 600px;
+  width: 100%;
   cursor: pointer;
   transition: transform 0.2s ease, border-color 0.2s ease;
 }
@@ -475,6 +493,7 @@ body {
   grid-template-columns: 1fr 1fr;
   gap: 10px;
   width: 100%;
+  margin: 0 auto;
 }
 .trust-cell {
   display: flex;
@@ -796,7 +815,7 @@ body {
 }
 
 /* ========================================================
-   SEÇÃO 4: CARROSSEL DE PROVAS REAIS (RESPONSIVIDADE PRO)
+   SEÇÃO 4: CARROSSEL DE PROVAS REAIS
 ======================================================== */
 .proof-section-wrapper {
   position: relative;
@@ -1320,6 +1339,9 @@ body {
 
 .price-display-wrapper {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .new-price-caption {
   font-size: 0.78rem;
@@ -1522,6 +1544,9 @@ body {
   z-index: 2;
   max-width: 650px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .contrast-phrase-gold {
   font-family: var(--font-heading);
@@ -1556,6 +1581,13 @@ body {
   color: var(--gold-light);
 }
 
+.closing-cta-wrap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 .btn-closing-final {
   padding: 20px 24px;
   font-size: 1rem;
@@ -1823,20 +1855,30 @@ body {
   }
   .hero-info-col {
     max-width: 800px;
+    margin: 0 auto;
+    align-items: center;
   }
   .hero-main-title {
     font-size: 3.3rem;
+  }
+  .hero-cta-immediate,
+  .hero-cta-group {
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 30px auto;
+  }
+  .btn-gold-action {
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px 32px;
+    font-size: 1.05rem;
   }
   .vsl-module {
     max-width: 680px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 30px;
-  }
-  .btn-gold-action {
-    max-width: 480px;
-    padding: 20px 32px;
-    font-size: 1.05rem;
   }
   .trust-grid-2x2 {
     max-width: 520px;
