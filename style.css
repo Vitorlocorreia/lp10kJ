@@ -356,38 +356,38 @@ body {
 /* Instagram Notification Stack on One Side (Mobile Background) */
 .insta-notif-stream-stack {
   position: absolute;
-  top: 24px;
-  right: 6px;
-  width: 200px;
-  height: 240px;
+  top: 30px;
+  right: 10px;
+  width: 215px;
+  height: 250px;
   z-index: 1;
   pointer-events: none;
   overflow: hidden;
-  mask-image: linear-gradient(180deg, transparent 0%, #000 15%, #000 80%, transparent 100%);
-  -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 15%, #000 80%, transparent 100%);
+  mask-image: linear-gradient(180deg, transparent 0%, #000 15%, #000 85%, transparent 100%);
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 15%, #000 85%, transparent 100%);
 }
 
 .insta-notif-stream-track {
   display: flex;
   flex-direction: column;
-  gap: 7px;
+  gap: 8px;
   animation: notifStreamScroll 14s linear infinite;
 }
 
 .insta-notif-card {
-  background: rgba(20, 20, 28, 0.58);
+  background: rgba(18, 18, 26, 0.72);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 12px;
-  padding: 6px 9px;
+  padding: 7px 10px;
   display: flex;
   align-items: flex-start;
   gap: 8px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
-  filter: blur(0.8px);
-  opacity: 0.6;
-  transform: scale(0.92);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.7);
+  filter: blur(0.4px);
+  opacity: 0.75;
+  transform: scale(0.95);
   transform-origin: right top;
 }
 
