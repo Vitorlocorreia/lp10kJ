@@ -246,7 +246,7 @@ body {
 ======================================================== */
 .section-hero {
   position: relative;
-  padding-top: 240px;
+  padding-top: clamp(280px, 42vh, 360px);
   padding-bottom: 40px;
   overflow: hidden;
   background-color: var(--bg-pure-black);
@@ -257,7 +257,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 480px;
+  height: clamp(420px, 58vh, 520px);
   z-index: 1;
   pointer-events: none;
   overflow: hidden;
@@ -272,14 +272,14 @@ body {
   object-fit: cover;
   object-position: top center;
   filter: contrast(1.05) brightness(0.98);
-  mask-image: linear-gradient(180deg, #000 35%, rgba(0,0,0,0.85) 60%, transparent 100%);
-  -webkit-mask-image: linear-gradient(180deg, #000 35%, rgba(0,0,0,0.85) 60%, transparent 100%);
+  mask-image: linear-gradient(180deg, #000 50%, rgba(0,0,0,0.8) 75%, transparent 100%);
+  -webkit-mask-image: linear-gradient(180deg, #000 50%, rgba(0,0,0,0.8) 75%, transparent 100%);
 }
 
 .hero-bg-dark-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(5,5,7,0.1) 0%, rgba(5,5,7,0.4) 40%, rgba(5,5,7,0.92) 80%, var(--bg-pure-black) 100%);
+  background: linear-gradient(180deg, transparent 0%, transparent 45%, rgba(5,5,7,0.7) 70%, var(--bg-pure-black) 92%);
 }
 
 .hero-bg-ambient-glow {
