@@ -2,13 +2,11 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <title>Links de Rastreamento (UTM) — Método PQP | Jorge Moura Jota</title>
+  <title>Links de Rastreamento UTM — Método PQP | Jorge Moura Jota</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
-
     @page {
       size: A4;
-      margin: 18mm 16mm;
+      margin: 20mm;
     }
 
     * {
@@ -18,328 +16,221 @@
     }
 
     body {
-      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
-      background: #09090d;
-      color: #e5e7eb;
-      line-height: 1.5;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: #ffffff;
+      color: #111827;
+      line-height: 1.6;
       font-size: 13px;
-      -webkit-print-color-adjust: exact;
-      print-color-adjust: exact;
     }
 
-    .header-card {
-      background: linear-gradient(135deg, #14141d 0%, #1a1710 100%);
-      border: 1px solid rgba(229, 169, 60, 0.4);
-      border-radius: 14px;
-      padding: 22px 24px;
+    .doc-header {
+      border-bottom: 2px solid #111827;
+      padding-bottom: 14px;
       margin-bottom: 20px;
     }
 
-    .badge-top {
-      display: inline-block;
-      background: rgba(229, 169, 60, 0.15);
-      border: 1px solid #e5a93c;
-      color: #ffd54f;
-      font-family: 'Outfit', sans-serif;
-      font-size: 10px;
+    .doc-title {
+      font-size: 18px;
       font-weight: 800;
-      letter-spacing: 1.5px;
-      padding: 4px 10px;
-      border-radius: 20px;
-      margin-bottom: 10px;
-    }
-
-    h1 {
-      font-family: 'Outfit', sans-serif;
-      font-size: 22px;
-      font-weight: 800;
-      color: #ffffff;
-      margin-bottom: 6px;
-    }
-
-    .gold-text {
-      color: #f3b236;
-    }
-
-    .meta-row {
-      display: flex;
-      gap: 20px;
-      font-size: 11px;
-      color: #9ca3af;
-      margin-top: 10px;
-      padding-top: 10px;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .meta-item strong {
-      color: #ffffff;
-    }
-
-    .section-title {
-      font-family: 'Outfit', sans-serif;
-      font-size: 15px;
-      font-weight: 800;
-      color: #ffd54f;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin: 18px 0 10px 0;
+      color: #111827;
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
 
+    .doc-subtitle {
+      font-size: 12px;
+      color: #4b5563;
+      margin-top: 4px;
+    }
+
+    .doc-meta {
+      margin-top: 10px;
+      font-size: 11px;
+      color: #374151;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .section-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #111827;
+      border-bottom: 1px solid #e5e7eb;
+      padding-bottom: 4px;
+      margin: 22px 0 12px 0;
+      text-transform: uppercase;
+    }
+
     .section-desc {
-      font-size: 11.5px;
-      color: #9ca3af;
+      font-size: 12px;
+      color: #4b5563;
+      margin-bottom: 14px;
+    }
+
+    .link-group {
       margin-bottom: 12px;
     }
 
-    .links-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-bottom: 18px;
+    .link-label {
+      font-weight: 700;
+      font-size: 12px;
+      color: #1f2937;
+      margin-bottom: 3px;
     }
 
-    .link-card {
-      background: #101017;
-      border: 1px solid rgba(255, 255, 255, 0.09);
-      border-left: 3px solid #e5a93c;
-      border-radius: 8px;
-      padding: 10px 14px;
+    .link-box {
+      background: #f9fafb;
+      border: 1px solid #d1d5db;
+      border-radius: 4px;
+      padding: 8px 10px;
+      font-family: Consolas, Monaco, "Courier New", monospace;
+      font-size: 10.5px;
+      color: #111827;
+      word-break: break-all;
     }
 
-    .link-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 5px;
+    .info-callout {
+      background: #f0fdf4;
+      border-left: 3px solid #16a34a;
+      padding: 10px 12px;
+      font-size: 11.5px;
+      color: #166534;
+      margin: 16px 0;
     }
 
-    .link-channel {
-      font-family: 'Outfit', sans-serif;
+    .guide-section {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 14px;
+      margin-top: 20px;
+    }
+
+    .guide-section h4 {
       font-size: 12px;
       font-weight: 700;
-      color: #ffffff;
+      margin-bottom: 8px;
+      color: #0f172a;
     }
 
-    .link-tag {
-      font-size: 9.5px;
-      background: rgba(229, 169, 60, 0.12);
-      color: #f3b236;
-      padding: 2px 6px;
-      border-radius: 4px;
-      font-weight: 600;
-    }
-
-    .link-url {
-      font-family: 'Courier New', monospace;
-      font-size: 10px;
-      color: #cbd5e1;
-      background: #060609;
-      padding: 6px 8px;
-      border-radius: 5px;
-      border: 1px solid rgba(255, 255, 255, 0.05);
-      word-break: break-all;
-      user-select: all;
-    }
-
-    .info-box {
-      background: rgba(16, 185, 129, 0.08);
-      border: 1px solid rgba(16, 185, 129, 0.3);
-      border-radius: 8px;
-      padding: 12px 14px;
-      margin-top: 14px;
+    .guide-section ul {
+      margin-left: 18px;
       font-size: 11.5px;
-      color: #d1fae5;
+      color: #334155;
     }
 
-    .info-box strong {
-      color: #34d399;
+    .guide-section li {
+      margin-bottom: 4px;
     }
 
     .page-break {
       page-break-before: always;
     }
 
-    .guide-box {
-      background: #12121b;
-      border: 1px solid rgba(229, 169, 60, 0.2);
-      border-radius: 10px;
-      padding: 16px 18px;
-      margin-top: 15px;
-    }
-
-    .guide-box h4 {
-      font-family: 'Outfit', sans-serif;
-      font-size: 13px;
-      color: #ffd54f;
-      margin-bottom: 8px;
-    }
-
-    .guide-box ul {
-      list-style-position: inside;
-      color: #cbd5e1;
-      font-size: 11px;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-
-    .footer-note {
-      text-align: center;
+    .footer-text {
+      margin-top: 30px;
+      padding-top: 10px;
+      border-top: 1px solid #e5e7eb;
       font-size: 10px;
-      color: #6b7280;
-      margin-top: 24px;
-      padding-top: 12px;
-      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      color: #9ca3af;
+      text-align: center;
     }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
-  <div class="header-card">
-    <div class="badge-top">DOCUMENTO OFICIAL DE RASTREAMENTO</div>
-    <h1>MÉTODO PQP — <span class="gold-text">GUIA DE LINKS COM UTM</span></h1>
-    <p style="color: #cbd5e1; font-size: 12px; margin-top: 4px;">
-      Links configurados para rastreamento de cliques, visitas e vendas no painel da Kirvano.
-    </p>
-    <div class="meta-row">
-      <div class="meta-item"><strong>Estrategista:</strong> Jorge Moura Jota (@jorgemourajota)</div>
-      <div class="meta-item"><strong>Produto:</strong> Método PQP (R$ 29,90)</div>
-      <div class="meta-item"><strong>Domínio:</strong> jorgemourajota.com.br</div>
+  <div class="doc-header">
+    <div class="doc-title">Desafio 10K (Método PQP) — Links de Rastreamento (UTM)</div>
+    <div class="doc-subtitle">Guia de Links de Divulgação e Rastreamento de Vendas por Canal</div>
+    <div class="doc-meta">
+      <div><strong>Estrategista:</strong> Jorge Moura Jota</div>
+      <div><strong>Produto:</strong> Método PQP (R$ 29,90)</div>
+      <div><strong>Domínio:</strong> jorgemourajota.com.br</div>
     </div>
   </div>
 
-  <!-- BLOCO 1: LINKS DA PÁGINA DE VENDAS -->
-  <div class="section-title">
-    <span>🌐 1. LINKS DA PÁGINA (Pitch Completo + Repasse Automático)</span>
-  </div>
+  <!-- SEÇÃO 1: LINKS DA PÁGINA -->
+  <div class="section-title">1. Links da Página de Vendas (Site Completo)</div>
   <p class="section-desc">
-    Use estes links para direcionar o público para a <strong>Landing Page Oficial</strong>. O sistema repassa automaticamente as UTMs para a Kirvano no momento da compra.
+    Use estes links quando quiser enviar as pessoas para a página de vendas antes de comprar. O sistema da página repassa a UTM automaticamente para a Kirvano na hora do checkout.
   </p>
 
-  <div class="links-grid">
-    <!-- BIO -->
-    <div class="link-card">
-      <div class="link-header">
-        <span class="link-channel">📱 Bio do Instagram</span>
-        <span class="link-tag">utm_medium=bio</span>
-      </div>
-      <div class="link-url">https://jorgemourajota.com.br/?utm_source=instagram&utm_medium=bio&utm_campaign=desafio10k</div>
-    </div>
-
-    <!-- STORIES -->
-    <div class="link-card">
-      <div class="link-header">
-        <span class="link-channel">🔥 Stories (Figurinha de Link)</span>
-        <span class="link-tag">utm_medium=story</span>
-      </div>
-      <div class="link-url">https://jorgemourajota.com.br/?utm_source=instagram&utm_medium=story&utm_campaign=desafio10k</div>
-    </div>
-
-    <!-- FEED / POSTS -->
-    <div class="link-card">
-      <div class="link-header">
-        <span class="link-channel">📸 Feed / Carrossel / Post (Direct ou Legenda)</span>
-        <span class="link-tag">utm_medium=feed</span>
-      </div>
-      <div class="link-url">https://jorgemourajota.com.br/?utm_source=instagram&utm_medium=feed&utm_campaign=desafio10k</div>
-    </div>
-
-    <!-- REELS -->
-    <div class="link-card">
-      <div class="link-header">
-        <span class="link-channel">🎬 Reels (Automação de Direct / Manychat)</span>
-        <span class="link-tag">utm_medium=reels</span>
-      </div>
-      <div class="link-url">https://jorgemourajota.com.br/?utm_source=instagram&utm_medium=reels&utm_campaign=desafio10k</div>
-    </div>
-
-    <!-- WHATSAPP -->
-    <div class="link-card">
-      <div class="link-header">
-        <span class="link-channel">💬 WhatsApp (Grupos, Lista VIP e 1 a 1)</span>
-        <span class="link-tag">utm_medium=grupo</span>
-      </div>
-      <div class="link-url">https://jorgemourajota.com.br/?utm_source=whatsapp&utm_medium=grupo&utm_campaign=desafio10k</div>
-    </div>
+  <div class="link-group">
+    <div class="link-label">BIO do Instagram:</div>
+    <div class="link-box">https://jorgemourajota.com.br/?utm_source=instagram&utm_medium=bio&utm_campaign=desafio10k</div>
   </div>
 
-  <div class="info-box">
-    <strong>⚡ Repasse Ativo:</strong> Quando o visitante clica em qualquer botão de compra da página, a Kirvano recebe exatamente de onde ele veio (ex: Story, Bio ou WhatsApp).
+  <div class="link-group">
+    <div class="link-label">STORIES (Figurinha de Link):</div>
+    <div class="link-box">https://jorgemourajota.com.br/?utm_source=instagram&utm_medium=story&utm_campaign=desafio10k</div>
+  </div>
+
+  <div class="link-group">
+    <div class="link-label">FEED / POSTS (Legenda ou Direct):</div>
+    <div class="link-box">https://jorgemourajota.com.br/?utm_source=instagram&utm_medium=feed&utm_campaign=desafio10k</div>
+  </div>
+
+  <div class="link-group">
+    <div class="link-label">REELS (Direct / Automação Manychat):</div>
+    <div class="link-box">https://jorgemourajota.com.br/?utm_source=instagram&utm_medium=reels&utm_campaign=desafio10k</div>
+  </div>
+
+  <div class="link-group">
+    <div class="link-label">WHATSAPP (Grupos, Listas e 1 a 1):</div>
+    <div class="link-box">https://jorgemourajota.com.br/?utm_source=whatsapp&utm_medium=grupo&utm_campaign=desafio10k</div>
+  </div>
+
+  <div class="info-callout">
+    <strong>Observação:</strong> O "repasse automático de UTM" já está ativado na página. Quando a pessoa clica no botão de compra na página, a Kirvano recebe exatamente a origem (ex: Story, Bio ou WhatsApp).
   </div>
 
   <div class="page-break"></div>
 
-  <!-- BLOCO 2: LINKS DIRETOS DO CHECKOUT -->
-  <div class="section-title">
-    <span>💳 2. LINKS DIRETOS DO CHECKOUT (Direto para Pagamento)</span>
-  </div>
+  <!-- SEÇÃO 2: LINKS DO CHECKOUT -->
+  <div class="section-title">2. Links Diretos do Checkout (Direto para Pagamento)</div>
   <p class="section-desc">
-    Use estes links quando quiser enviar o lead <strong>direto para a tela de pagamento da Kirvano</strong> sem passar pela página de vendas.
+    Use estes links quando fizer uma chamada direta nos stories ou no WhatsApp e quiser que o cliente caia direto na tela de pagamento da Kirvano sem passar pela página.
   </p>
 
-  <div class="links-grid">
-    <!-- CHECKOUT BIO -->
-    <div class="link-card">
-      <div class="link-header">
-        <span class="link-channel">📱 Checkout Direto — Bio do Instagram</span>
-        <span class="link-tag">utm_medium=bio</span>
-      </div>
-      <div class="link-url">https://pay.kirvano.com/047c7665-a1d3-4a59-91e5-7eea15fe704d?utm_source=instagram&utm_medium=bio&utm_campaign=desafio10k</div>
-    </div>
-
-    <!-- CHECKOUT STORIES -->
-    <div class="link-card">
-      <div class="link-header">
-        <span class="link-channel">🔥 Checkout Direto — Stories</span>
-        <span class="link-tag">utm_medium=story</span>
-      </div>
-      <div class="link-url">https://pay.kirvano.com/047c7665-a1d3-4a59-91e5-7eea15fe704d?utm_source=instagram&utm_medium=story&utm_campaign=desafio10k</div>
-    </div>
-
-    <!-- CHECKOUT FEED -->
-    <div class="link-card">
-      <div class="link-header">
-        <span class="link-channel">📸 Checkout Direto — Feed / Posts</span>
-        <span class="link-tag">utm_medium=feed</span>
-      </div>
-      <div class="link-url">https://pay.kirvano.com/047c7665-a1d3-4a59-91e5-7eea15fe704d?utm_source=instagram&utm_medium=feed&utm_campaign=desafio10k</div>
-    </div>
-
-    <!-- CHECKOUT REELS -->
-    <div class="link-card">
-      <div class="link-header">
-        <span class="link-channel">🎬 Checkout Direto — Reels / Direct</span>
-        <span class="link-tag">utm_medium=reels</span>
-      </div>
-      <div class="link-url">https://pay.kirvano.com/047c7665-a1d3-4a59-91e5-7eea15fe704d?utm_source=instagram&utm_medium=reels&utm_campaign=desafio10k</div>
-    </div>
-
-    <!-- CHECKOUT WHATSAPP -->
-    <div class="link-card">
-      <div class="link-header">
-        <span class="link-channel">💬 Checkout Direto — WhatsApp / Grupos</span>
-        <span class="link-tag">utm_medium=grupo</span>
-      </div>
-      <div class="link-url">https://pay.kirvano.com/047c7665-a1d3-4a59-91e5-7eea15fe704d?utm_source=whatsapp&utm_medium=grupo&utm_campaign=desafio10k</div>
-    </div>
+  <div class="link-group">
+    <div class="link-label">BIO do Instagram (Direto Kirvano):</div>
+    <div class="link-box">https://pay.kirvano.com/047c7665-a1d3-4a59-91e5-7eea15fe704d?utm_source=instagram&utm_medium=bio&utm_campaign=desafio10k</div>
   </div>
 
-  <!-- GUIA DE VISUALIZAÇÃO NA KIRVANO -->
-  <div class="guide-box">
-    <h4>📊 Como Visualizar os Resultados no Painel da Kirvano:</h4>
+  <div class="link-group">
+    <div class="link-label">STORIES (Direto Kirvano):</div>
+    <div class="link-box">https://pay.kirvano.com/047c7665-a1d3-4a59-91e5-7eea15fe704d?utm_source=instagram&utm_medium=story&utm_campaign=desafio10k</div>
+  </div>
+
+  <div class="link-group">
+    <div class="link-label">FEED / POSTS (Direto Kirvano):</div>
+    <div class="link-box">https://pay.kirvano.com/047c7665-a1d3-4a59-91e5-7eea15fe704d?utm_source=instagram&utm_medium=feed&utm_campaign=desafio10k</div>
+  </div>
+
+  <div class="link-group">
+    <div class="link-label">REELS (Direto Kirvano):</div>
+    <div class="link-box">https://pay.kirvano.com/047c7665-a1d3-4a59-91e5-7eea15fe704d?utm_source=instagram&utm_medium=reels&utm_campaign=desafio10k</div>
+  </div>
+
+  <div class="link-group">
+    <div class="link-label">WHATSAPP / GRUPOS (Direto Kirvano):</div>
+    <div class="link-box">https://pay.kirvano.com/047c7665-a1d3-4a59-91e5-7eea15fe704d?utm_source=whatsapp&utm_medium=grupo&utm_campaign=desafio10k</div>
+  </div>
+
+  <!-- SEÇÃO 3: EXPLICAÇÃO DOS PARÂMETROS -->
+  <div class="guide-section">
+    <h4>Como ler os parâmetros e visualizar na Kirvano:</h4>
     <ul>
-      <li><strong>No Menu Vendas:</strong> Clique em qualquer venda realizada para ver a origem exata (ex: <code>utm_source=instagram</code>, <code>utm_medium=story</code>).</li>
-      <li><strong>Nos Relatórios:</strong> Vá em <em>Relatórios / Analytics</em> e filtre por <em>Origem de Venda</em> para comparar quantas vendas vieram de Stories vs. Bio vs. WhatsApp.</li>
-      <li><strong>Otimização de Tráfego:</strong> Foque seus esforços no canal que gerar a maior taxa de conversão em tempo real.</li>
+      <li><strong>utm_source:</strong> Plataforma de origem (ex: <code>instagram</code>, <code>whatsapp</code>).</li>
+      <li><strong>utm_medium:</strong> Local específico de onde veio o clique (ex: <code>story</code>, <code>bio</code>, <code>feed</code>, <code>reels</code>, <code>grupo</code>).</li>
+      <li><strong>utm_campaign:</strong> Identificador da campanha (<code>desafio10k</code>).</li>
+      <li><strong>Visualização:</strong> No painel da Kirvano (app.kirvano.com), acesse o menu <strong>Vendas</strong> ou <strong>Relatórios</strong> para ver a origem de cada compra efetuada.</li>
     </ul>
   </div>
 
-  <div class="footer-note">
-    Método PQP • Jorge Moura Jota • Founder @groupjota • Documento confidencial de uso estratégico.
+  <div class="footer-text">
+    Documento preparado para Jorge Moura Jota • Método PQP • 2026
   </div>
 
 </body>
