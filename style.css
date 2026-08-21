@@ -262,7 +262,7 @@ body {
   left: 0;
   width: 100%;
   height: clamp(420px, 58vh, 520px);
-  z-index: 1;
+  z-index: 2;
   pointer-events: none;
   overflow: hidden;
   display: flex;
@@ -288,7 +288,7 @@ body {
 
 .hero-content-relative {
   position: relative;
-  z-index: 2;
+  z-index: 3;
 }
 
 /* ========================================================
