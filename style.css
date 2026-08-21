@@ -202,17 +202,24 @@ body {
 .nav-brand {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   text-decoration: none;
   font-family: var(--font-heading);
-  font-size: 1.05rem;
+  font-size: 0.95rem;
   font-weight: 800;
   color: #fff;
-  letter-spacing: 1.5px;
+  letter-spacing: 1px;
 }
-.brand-bolt {
-  color: var(--gold-primary);
-  font-size: 0.95rem;
+.brand-logo-3d-img {
+  height: 28px;
+  width: auto;
+  max-width: 58px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 10px rgba(229, 169, 60, 0.45));
+  transition: transform 0.25s ease;
+}
+.nav-brand:hover .brand-logo-3d-img {
+  transform: scale(1.06);
 }
 .brand-name strong {
   color: var(--gold-light);
@@ -1745,11 +1752,21 @@ body {
   gap: 12px;
 }
 .footer-brand-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   font-family: var(--font-heading);
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 800;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   color: #fff;
+}
+.footer-logo-3d-img {
+  height: 26px;
+  width: auto;
+  max-width: 52px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 8px rgba(229, 169, 60, 0.4));
 }
 .footer-brand-logo strong { color: var(--gold-light); }
 .footer-legal-copy {
