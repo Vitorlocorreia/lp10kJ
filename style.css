@@ -202,27 +202,19 @@ body {
 .nav-brand {
   display: flex;
   align-items: center;
-  gap: 10px;
   text-decoration: none;
-  font-family: var(--font-heading);
-  font-size: 0.95rem;
-  font-weight: 800;
-  color: #fff;
-  letter-spacing: 1px;
 }
-.brand-logo-3d-img {
-  height: 28px;
+.brand-logo-3d-standalone {
+  height: 32px;
   width: auto;
-  max-width: 58px;
+  max-width: 90px;
   object-fit: contain;
   filter: drop-shadow(0 0 10px rgba(229, 169, 60, 0.45));
   transition: transform 0.25s ease;
+  display: block;
 }
-.nav-brand:hover .brand-logo-3d-img {
+.nav-brand:hover .brand-logo-3d-standalone {
   transform: scale(1.06);
-}
-.brand-name strong {
-  color: var(--gold-light);
 }
 .nav-menu {
   display: none;
@@ -1752,23 +1744,18 @@ body {
   gap: 12px;
 }
 .footer-brand-logo {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: 10px;
-  font-family: var(--font-heading);
-  font-size: 0.95rem;
-  font-weight: 800;
-  letter-spacing: 1px;
-  color: #fff;
+  justify-content: center;
 }
-.footer-logo-3d-img {
-  height: 26px;
+.footer-logo-3d-standalone {
+  height: 28px;
   width: auto;
-  max-width: 52px;
+  max-width: 80px;
   object-fit: contain;
-  filter: drop-shadow(0 0 8px rgba(229, 169, 60, 0.4));
+  filter: drop-shadow(0 0 10px rgba(229, 169, 60, 0.4));
+  display: block;
 }
-.footer-brand-logo strong { color: var(--gold-light); }
 .footer-legal-copy {
   font-size: 0.72rem;
   color: var(--text-dim);
@@ -1930,6 +1917,9 @@ body {
   }
   .nav-menu a:hover {
     color: var(--gold-light);
+  }
+  .brand-logo-3d-standalone {
+    height: 36px;
   }
   .nav-cta-btn {
     padding: 8px 20px;
