@@ -22,11 +22,11 @@ document.addEventListener('DOMContentLoaded', () => {
       'sck'
     ];
 
-    // 1. Coleta os parâmetros da URL atual
+    // 1. Coleta todos os parâmetros da URL atual dinamicamente
     let activeParams = {};
-    trackingKeys.forEach(key => {
-      if (currentParams.has(key)) {
-        activeParams[key] = currentParams.get(key);
+    currentParams.forEach((value, key) => {
+      if (value && value.trim() !== '') {
+        activeParams[key] = value;
       }
     });
 
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
         console.warn('Storage indisponível para UTMs', e);
       }
     } else {
-      // Caso não tenha na URL, tenta recuperar da sessão
+      // Caso não tenha na URL, recupera da sessão ou do armazenamento local
       try {
         const saved = sessionStorage.getItem('pqp_utms') || localStorage.getItem('pqp_utms');
         if (saved) {
