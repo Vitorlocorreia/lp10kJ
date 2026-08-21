@@ -341,116 +341,117 @@ body {
 /* Defocused Background Glyphs */
 .bg-blurred-insta-glyph {
   position: absolute;
-  color: rgba(229, 169, 60, 0.04);
+  color: rgba(229, 169, 60, 0.05);
   pointer-events: none;
-  filter: blur(8px);
+  filter: blur(6px);
   z-index: 1;
 }
-.insta-glyph-top {
-  top: 6%;
-  right: 5%;
-  font-size: 90px;
-  transform: rotate(-15deg);
-}
-.insta-glyph-bottom {
-  top: 32%;
-  left: 3%;
-  font-size: 75px;
-  color: rgba(229, 169, 60, 0.03);
-  transform: rotate(20deg);
+.insta-glyph-bg {
+  top: 10%;
+  left: 4%;
+  font-size: 110px;
+  transform: rotate(-12deg);
 }
 
-/* Floating Glassmorphic Instagram Growth Pills - Subtle & Defocused on Mobile */
-.floating-growth-pill {
+/* Instagram Notification Stack on One Side (Mobile Background) */
+.insta-notif-stream-stack {
   position: absolute;
+  top: 24px;
+  right: 6px;
+  width: 200px;
+  height: 240px;
   z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+  mask-image: linear-gradient(180deg, transparent 0%, #000 15%, #000 80%, transparent 100%);
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 15%, #000 80%, transparent 100%);
+}
+
+.insta-notif-stream-track {
   display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 6px 12px;
-  background: rgba(14, 14, 20, 0.55);
-  border: 1px solid rgba(229, 169, 60, 0.25);
+  flex-direction: column;
+  gap: 7px;
+  animation: notifStreamScroll 14s linear infinite;
+}
+
+.insta-notif-card {
+  background: rgba(20, 20, 28, 0.58);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  border-radius: 30px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
-  opacity: 0.5;
-  filter: blur(1.2px);
-  transform: scale(0.85);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 6px 9px;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
+  filter: blur(0.8px);
+  opacity: 0.6;
+  transform: scale(0.92);
+  transform-origin: right top;
 }
 
-.pill-icon-wrap {
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
+.notif-avatar-insta {
+  width: 20px;
+  height: 20px;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.7rem;
-}
-.insta-icon-glow {
-  background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
   color: #fff;
-  opacity: 0.85;
-}
-.gold-icon-glow {
-  background: var(--gold-gradient);
-  color: #120d03;
-}
-.heart-icon-glow {
-  background: linear-gradient(135deg, #ef4444, #dc2626);
-  color: #fff;
+  font-size: 0.72rem;
+  flex-shrink: 0;
+  margin-top: 1px;
 }
 
-.pill-text-block {
+.notif-content-info {
   display: flex;
   flex-direction: column;
   text-align: left;
+  overflow: hidden;
+  flex: 1;
 }
-.pill-sub {
-  font-size: 0.55rem;
-  color: var(--text-dim);
+
+.notif-top-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
   line-height: 1;
-  text-transform: uppercase;
+  margin-bottom: 2px;
 }
-.pill-val {
-  font-family: var(--font-heading);
-  font-size: 0.72rem;
-  font-weight: 700;
+
+.notif-app-label {
+  font-size: 0.52rem;
+  font-weight: 800;
+  color: var(--text-dim);
+  letter-spacing: 0.5px;
+}
+
+.notif-time-ago {
+  font-size: 0.52rem;
+  color: var(--text-dim);
+}
+
+.notif-msg-text {
+  font-size: 0.62rem;
+  line-height: 1.25;
   color: #e5e7eb;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-/* Subtle Mobile Positions & Gentle Rising Drift */
-.pill-followers {
-  top: 12%;
-  right: 4%;
-  animation: floatDrift1 9s ease-in-out infinite alternate;
-}
-.pill-viral {
-  top: 26%;
-  left: 2%;
-  animation: floatDrift2 11s ease-in-out infinite alternate;
-}
-.pill-likes {
-  top: 4%;
-  left: 6%;
-  animation: floatDrift3 8s ease-in-out infinite alternate;
+.notif-msg-text strong {
+  color: #fff;
+  font-weight: 700;
 }
 
-@keyframes floatDrift1 {
-  0% { transform: scale(0.85) translateY(0px); opacity: 0.35; }
-  50% { opacity: 0.55; }
-  100% { transform: scale(0.85) translateY(-22px); opacity: 0.3; }
-}
-@keyframes floatDrift2 {
-  0% { transform: scale(0.8) translateY(0px); opacity: 0.3; }
-  50% { opacity: 0.5; }
-  100% { transform: scale(0.8) translateY(-26px); opacity: 0.25; }
-}
-@keyframes floatDrift3 {
-  0% { transform: scale(0.75) translateY(0px); opacity: 0.35; }
-  50% { opacity: 0.55; }
-  100% { transform: scale(0.75) translateY(-18px); opacity: 0.3; }
+@keyframes notifStreamScroll {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
 }
 
 .hero-info-col {
