@@ -242,7 +242,7 @@ body {
 }
 
 /* ========================================================
-   SEÇÃO 1: HERO SECTION (FULL-BLEED CINEMATIC)
+   SEÇÃO 1: HERO SECTION (HIGH-END TICKET LEVEL)
 ======================================================== */
 .section-hero {
   position: relative;
@@ -252,7 +252,11 @@ body {
   background-color: var(--bg-pure-black);
 }
 
-.hero-bg-creator-wrap {
+.hero-desktop-bg-wrap {
+  display: none;
+}
+
+.hero-mobile-bg-wrap {
   position: absolute;
   top: 0;
   left: 0;
@@ -265,7 +269,7 @@ body {
   justify-content: center;
 }
 
-.hero-bg-creator-img {
+.hero-mobile-bg-img {
   width: 100%;
   max-width: 480px;
   height: 100%;
@@ -276,21 +280,10 @@ body {
   -webkit-mask-image: linear-gradient(180deg, #000 50%, rgba(0,0,0,0.8) 75%, transparent 100%);
 }
 
-.hero-bg-dark-overlay {
+.hero-mobile-bg-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(180deg, transparent 0%, transparent 45%, rgba(5,5,7,0.7) 70%, var(--bg-pure-black) 92%);
-}
-
-.hero-bg-ambient-glow {
-  position: absolute;
-  top: 20%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 320px;
-  height: 320px;
-  background: radial-gradient(circle, rgba(229, 169, 60, 0.2) 0%, transparent 70%);
-  filter: blur(60px);
 }
 
 .hero-content-relative {
@@ -326,15 +319,11 @@ body {
   width: 100%;
 }
 
-.hero-media-col {
+.hero-video-col {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.hero-desktop-portrait {
-  display: none;
 }
 
 /* Hero Immediate Action Button */
@@ -1925,16 +1914,42 @@ body {
   }
   
   .section-hero {
-    padding-top: 60px;
-    padding-bottom: 80px;
+    padding-top: 70px;
+    padding-bottom: 90px;
+    background-color: #040406;
+    min-height: 640px;
   }
-  .hero-bg-creator-wrap {
+  .hero-mobile-bg-wrap {
     display: none !important;
+  }
+  .hero-desktop-bg-wrap {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  .hero-desktop-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center left;
+    filter: contrast(1.06) brightness(0.92);
+  }
+  .hero-desktop-bg-shade {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(4, 4, 6, 0.85) 0%, rgba(4, 4, 6, 0.4) 45%, rgba(4, 4, 6, 0.92) 100%),
+                linear-gradient(180deg, rgba(4, 4, 6, 0.4) 0%, transparent 25%, rgba(4, 4, 6, 0.95) 100%);
   }
   .hero-layout-grid {
     display: grid;
-    grid-template-columns: 1.15fr 0.85fr;
-    gap: 40px;
+    grid-template-columns: 1.12fr 0.88fr;
+    gap: 48px;
     align-items: center;
   }
   .hero-info-col {
@@ -1972,56 +1987,16 @@ body {
     max-width: 100%;
     margin: 0;
   }
-  .hero-media-col {
+  .hero-video-col {
     display: flex;
-    flex-direction: column;
-    gap: 20px;
     align-items: center;
     justify-content: center;
     width: 100%;
   }
-  .hero-desktop-portrait {
-    display: block;
-    position: relative;
-    width: 100%;
-    max-width: 440px;
-    height: 380px;
-    border-radius: 18px;
-    overflow: hidden;
-    background: radial-gradient(circle at 50% 30%, rgba(229, 169, 60, 0.15) 0%, #060609 85%);
-    border: 1px solid var(--border-gold);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8), 0 0 30px rgba(229, 169, 60, 0.15);
-  }
-  .hero-desktop-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: top center;
-  }
-  .hero-desktop-gradient {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, transparent 45%, rgba(5, 5, 7, 0.85) 100%);
-  }
-  .hero-desktop-badge {
-    position: absolute;
-    bottom: 14px;
-    left: 14px;
-    background: rgba(0, 0, 0, 0.85);
-    backdrop-filter: blur(8px);
-    border: 1px solid var(--border-gold);
-    border-radius: 20px;
-    padding: 6px 14px;
-    font-size: 0.72rem;
-    font-weight: 800;
-    color: var(--gold-light);
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .vsl-module {
+  .vsl-hero-prominent {
     max-width: 100%;
     margin: 0;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.95), 0 0 35px rgba(229, 169, 60, 0.18);
   }
   
   /* Belief Cards in 2x2 grid */
