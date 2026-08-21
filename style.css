@@ -209,6 +209,7 @@ body {
   width: auto;
   max-width: 90px;
   object-fit: contain;
+  mix-blend-mode: screen;
   filter: drop-shadow(0 0 10px rgba(229, 169, 60, 0.45));
   transition: transform 0.25s ease;
   display: block;
@@ -1753,6 +1754,7 @@ body {
   width: auto;
   max-width: 80px;
   object-fit: contain;
+  mix-blend-mode: screen;
   filter: drop-shadow(0 0 10px rgba(229, 169, 60, 0.4));
   display: block;
 }
