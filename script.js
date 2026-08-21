@@ -276,51 +276,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // ========================================================
-  // 3. VSL VIDEO MODAL
-  // ========================================================
-  const vslModule = document.getElementById('vslModule');
-  const vslModal = document.getElementById('vslModal');
-  const closeVslModal = document.getElementById('closeVslModal');
-
-  function openModal() {
-    if (vslModal) {
-      vslModal.classList.add('open');
-      document.body.style.overflow = 'hidden';
-    }
-  }
-
-  function closeModal() {
-    if (vslModal) {
-      vslModal.classList.remove('open');
-      document.body.style.overflow = '';
-    }
-  }
-
-  if (vslModule) {
-    vslModule.addEventListener('click', openModal);
-  }
-
-  if (closeVslModal) {
-    closeVslModal.addEventListener('click', closeModal);
-  }
-
-  if (vslModal) {
-    vslModal.addEventListener('click', (e) => {
-      if (e.target === vslModal) {
-        closeModal();
-      }
-    });
-  }
-
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && vslModal && vslModal.classList.contains('open')) {
-      closeModal();
-    }
-  });
-
-
-  // ========================================================
-  // 4. SMOOTH SCROLLING FOR ANCHOR LINKS (EXCETO LINKS EXTERNOS)
+  // 3. SMOOTH SCROLLING FOR ANCHOR LINKS (EXCETO LINKS EXTERNOS)
   // ========================================================
   const anchorLinks = document.querySelectorAll('a[href^="#"]');
   anchorLinks.forEach((link) => {

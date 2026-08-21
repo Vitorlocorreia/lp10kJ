@@ -6,13 +6,14 @@
   <title>Método PQP — Conquiste 10K Seguidores em 30 Dias | Jorge Moura</title>
   <meta name="description" content="Conquiste seus primeiros 10 mil seguidores em 30 dias, ou eu devolvo 100% do seu dinheiro. Sem tráfego pago, sem passar vergonha." />
 
-  <!-- Google Fonts: Outfit & Plus Jakarta Sans -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,700&display=swap" rel="stylesheet">
+  <!-- Preconnect & Fast Font Loading -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   
-  <!-- FontAwesome 6 -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <!-- FontAwesome 6 (Non-blocking async load) -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" /></noscript>
 
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -201,48 +202,6 @@
           </div>
 
         </div>
-
-        <!-- Coluna 2: VSL LATERAL INTEGRADA AO BACKGROUND HIGH-TICKET -->
-        <div class="hero-video-col">
-          
-          <div class="hero-video-stage">
-            <!-- Creator Visual Preview / VSL Component -->
-            <div class="vsl-module vsl-hero-prominent" id="vslModule">
-              <div class="vsl-viewport">
-                <img src="assets/vsl_preview.jpg" alt="Assistir Apresentação do Método PQP" class="vsl-thumb" />
-                <div class="vsl-vignette"></div>
-                
-                <div class="vsl-play-button">
-                  <div class="play-pulse-ring"></div>
-                  <i class="fa-solid fa-play"></i>
-                </div>
-
-                <div class="vsl-tag-top">
-                  <span class="pulse-red-dot"></span>
-                  <span>AULA REVELADORA LIBERADA</span>
-                </div>
-
-                <div class="vsl-time-pill">
-                  <i class="fa-solid fa-volume-high"></i>
-                  <span>04:18 • Assista com áudio</span>
-                </div>
-              </div>
-
-              <div class="vsl-bottom-bar">
-                <div class="vsl-track">
-                  <div class="vsl-fill"></div>
-                </div>
-                <div class="vsl-meta">
-                  <span><i class="fa-solid fa-shield-halved gold-icon"></i> Método Validado 2026</span>
-                  <span><i class="fa-solid fa-circle-check gold-icon"></i> 4K ULTRA HD</span>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-
       </div>
 
     </div>
@@ -490,7 +449,7 @@
                   <span>182 MIL VIEWS • +400 SEGUIDORES</span>
                 </div>
                 <div class="proof-img-frame">
-                  <img src="assets/proof_1.png" alt="Rodrigo César - 182k visualizações e 400 seguidores com Método PQP" class="proof-screenshot-img" />
+                  <img src="assets/proof_1.png" alt="Rodrigo César - 182k visualizações e 400 seguidores com Método PQP" class="proof-screenshot-img" loading="lazy" decoding="async" />
                 </div>
                 <div class="proof-caption">
                   <h4>Rodrigo César — Caso de Sucesso</h4>
@@ -507,7 +466,7 @@
                   <span>DEPOIMENTO NO WHATSAPP</span>
                 </div>
                 <div class="proof-img-frame">
-                  <img src="assets/proof_2.png" alt="Depoimento de aluno no WhatsApp Método PQP" class="proof-screenshot-img" />
+                  <img src="assets/proof_2.png" alt="Depoimento de aluno no WhatsApp Método PQP" class="proof-screenshot-img" loading="lazy" decoding="async" />
                 </div>
                 <div class="proof-caption">
                   <h4>"Cara, olha como mudou!"</h4>
@@ -524,7 +483,7 @@
                   <span>MÉTRICAS DETALHADAS DE RETENÇÃO</span>
                 </div>
                 <div class="proof-img-frame">
-                  <img src="assets/proof_3.png" alt="Engajamento detalhado Método PQP" class="proof-screenshot-img" />
+                  <img src="assets/proof_3.png" alt="Engajamento detalhado Método PQP" class="proof-screenshot-img" loading="lazy" decoding="async" />
                 </div>
                 <div class="proof-caption">
                   <h4>8,1k Curtidas e 663 Compartilhamentos</h4>
@@ -541,7 +500,7 @@
                   <span>ENGAJAMENTO EXPLOSIVO</span>
                 </div>
                 <div class="proof-img-frame">
-                  <img src="assets/proof_4.png" alt="Depoimento engajamento e conexão Método PQP" class="proof-screenshot-img" />
+                  <img src="assets/proof_4.png" alt="Depoimento engajamento e conexão Método PQP" class="proof-screenshot-img" loading="lazy" decoding="async" />
                 </div>
                 <div class="proof-caption">
                   <h4>"O método realmente faz diferença"</h4>
@@ -558,7 +517,7 @@
                   <span>CLAREZA & RESULTADOS</span>
                 </div>
                 <div class="proof-img-frame">
-                  <img src="assets/proof_5.png" alt="Depoimento Jorge o método tá me ajudando muito" class="proof-screenshot-img" />
+                  <img src="assets/proof_5.png" alt="Depoimento Jorge o método tá me ajudando muito" class="proof-screenshot-img" loading="lazy" decoding="async" />
                 </div>
                 <div class="proof-caption">
                   <h4>"PQP funciona mesmo"</h4>
@@ -575,7 +534,7 @@
                   <span>297 MIL VIEWS • +3.747 SEGUIDORES</span>
                 </div>
                 <div class="proof-img-frame">
-                  <img src="assets/proof_6.png" alt="Insights Reel - 297k views e +3.747 seguidores Método PQP" class="proof-screenshot-img" />
+                  <img src="assets/proof_6.png" alt="Insights Reel - 297k views e +3.747 seguidores Método PQP" class="proof-screenshot-img" loading="lazy" decoding="async" />
                 </div>
                 <div class="proof-caption">
                   <h4>+3.747 Seguidores em um Único Conteúdo</h4>
@@ -619,7 +578,7 @@
           
           <div class="creator-image-side">
             <div class="creator-photo-frame">
-              <img src="assets/hero_creator.png" alt="Jorge Moura Jota — Founder Group Jota" class="creator-portrait-img" />
+              <img src="assets/hero_creator.png" alt="Jorge Moura Jota — Founder Group Jota" class="creator-portrait-img" loading="lazy" decoding="async" />
               <div class="creator-shadow-vignette"></div>
               <div class="creator-float-badge">
                 <i class="fa-solid fa-cross gold-icon"></i>
@@ -804,7 +763,7 @@
           <!-- 3D Mockup Box -->
           <div class="offer-media-box">
             <div class="mockup-3d-wrapper">
-              <img src="assets/product_mockup.jpg" alt="Mockup 3D do Método PQP" class="mockup-img-elem" />
+              <img src="assets/product_mockup.jpg" alt="Mockup 3D do Método PQP" class="mockup-img-elem" loading="lazy" decoding="async" />
             </div>
             
             <div class="mockup-mini-specs">
@@ -1011,7 +970,7 @@
       
       <div class="cinema-closing-card">
         <div class="cinema-closing-bg">
-          <img src="assets/closing_creator.jpg" alt="Jorge Moura - Fechamento Método PQP" class="cinema-bg-img" />
+          <img src="assets/closing_creator.jpg" alt="Jorge Moura - Fechamento Método PQP" class="cinema-bg-img" loading="lazy" decoding="async" />
           <div class="cinema-dark-overlay"></div>
           <div class="cinema-amber-light"></div>
         </div>
@@ -1083,32 +1042,6 @@
     </div>
   </footer>
 
-  <!-- Interactive VSL Video Modal -->
-  <div class="vsl-modal-overlay" id="vslModal">
-    <div class="vsl-modal-window">
-      <button class="vsl-modal-close" id="closeVslModal" aria-label="Fechar Modal">
-        <i class="fa-solid fa-xmark"></i>
-      </button>
-      
-      <div class="vsl-modal-body">
-        <img src="assets/vsl_preview.jpg" alt="Apresentação do Método PQP" class="vsl-modal-bg" />
-        <div class="vsl-modal-shade">
-          <div class="vsl-live-badge">
-            <span class="live-blink"></span> AO VIVO • MÉTODO PQP
-          </div>
-          <div class="vsl-center-alert">
-            <i class="fa-solid fa-circle-play gold-huge-play"></i>
-            <p>Como Fazer 10K Seguidores em 30 Dias</p>
-            <small>Apresentado por Jorge Moura Jota</small>
-          </div>
-          <div class="vsl-progress-wrapper">
-            <div class="vsl-progress-bar-moving"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>

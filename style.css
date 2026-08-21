@@ -76,13 +76,14 @@ body {
   padding: 0 16px;
 }
 
-/* Ambient Radial Glows */
+/* Ambient Radial Glows (Optimized for GPU without scroll repaint) */
 .ambient-glow {
-  position: fixed;
+  position: absolute;
   border-radius: 50%;
   pointer-events: none;
   z-index: 0;
-  filter: blur(120px);
+  filter: blur(70px);
+  will-change: opacity;
 }
 .glow-top {
   top: -80px;
@@ -565,136 +566,26 @@ body {
   width: 100%;
 }
 
-/* VSL Player */
-.vsl-module {
-  background: var(--bg-graphite-800);
-  border: 1px solid var(--border-gold);
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.8), 0 0 25px rgba(229, 169, 60, 0.15);
-  margin: 0 auto 24px auto;
-  max-width: 600px;
-  width: 100%;
-  cursor: pointer;
-  transition: transform 0.2s ease, border-color 0.2s ease;
-}
-.vsl-module:hover {
-  border-color: var(--border-gold-bright);
-}
-.vsl-viewport {
-  position: relative;
-  aspect-ratio: 16 / 9;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.vsl-thumb {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(0.7) contrast(1.1);
-}
-.vsl-vignette {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle, rgba(0,0,0,0.1) 0%, rgba(5,5,7,0.7) 100%);
-}
-.vsl-play-button {
-  position: absolute;
-  width: 56px;
-  height: 56px;
-  background: var(--gold-gradient);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #120d03;
-  font-size: 1.2rem;
-  box-shadow: 0 0 25px rgba(243, 178, 54, 0.7);
-  z-index: 2;
-  transition: transform 0.2s ease;
-}
-.vsl-module:hover .vsl-play-button {
-  transform: scale(1.08);
-}
-.play-pulse-ring {
-  position: absolute;
-  inset: -6px;
-  border-radius: 50%;
-  border: 2px solid rgba(255, 213, 79, 0.6);
-  animation: ringPulse 2s infinite;
-}
-@keyframes ringPulse {
-  0% { transform: scale(0.95); opacity: 1; }
-  100% { transform: scale(1.35); opacity: 0; }
+/* Performance: Offscreen content visibility & Hardware Compositing */
+#como-funciona,
+#metodo,
+#depoimentos,
+#sobre-jorge,
+#conteudo,
+#oferta,
+#garantia,
+#faq,
+#fechamento {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 600px;
 }
 
-.vsl-tag-top {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  background: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(6px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 20px;
-  padding: 4px 10px;
-  font-size: 0.62rem;
-  font-weight: 800;
-  color: var(--gold-light);
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-.pulse-red-dot {
-  width: 6px;
-  height: 6px;
-  background: var(--red-primary);
-  border-radius: 50%;
-  animation: blinkDot 1.2s infinite;
-}
-@keyframes blinkDot {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.4; transform: scale(0.8); }
-}
-
-.vsl-time-pill {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  background: rgba(0, 0, 0, 0.85);
-  border-radius: 6px;
-  padding: 3px 8px;
-  font-size: 0.65rem;
-  font-weight: 700;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-.vsl-bottom-bar {
-  padding: 10px 14px;
-  background: #09090c;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-}
-.vsl-track {
-  width: 100%;
-  height: 4px;
-  background: rgba(255, 255, 255, 0.12);
-  border-radius: 2px;
-  margin-bottom: 8px;
-  overflow: hidden;
-}
-.vsl-fill {
-  width: 35%;
-  height: 100%;
-  background: var(--gold-gradient);
-}
-.vsl-meta {
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.7rem;
-  color: var(--text-muted);
+.carousel-track,
+.insta-notif-stream-track,
+.btn-gold-action,
+.proof-slide-card {
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 /* Trust Grid 2x2 */
@@ -1940,123 +1831,7 @@ body {
   font-weight: 700;
 }
 
-/* Modal */
-.vsl-modal-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 999;
-  background: rgba(0, 0, 0, 0.92);
-  backdrop-filter: blur(12px);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  padding: 16px;
-}
-.vsl-modal-overlay.open {
-  display: flex;
-}
-.vsl-modal-window {
-  position: relative;
-  width: 100%;
-  max-width: 650px;
-  background: #0d0d12;
-  border: 1px solid var(--border-gold);
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.95), 0 0 30px var(--gold-glow);
-  animation: modalScaleUp 0.3s ease;
-}
-@keyframes modalScaleUp {
-  0% { transform: scale(0.92); opacity: 0; }
-  100% { transform: scale(1); opacity: 1; }
-}
-.vsl-modal-close {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  width: 32px;
-  height: 32px;
-  background: rgba(0, 0, 0, 0.75);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
-  color: #fff;
-  font-size: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  z-index: 10;
-}
-.vsl-modal-body {
-  position: relative;
-  aspect-ratio: 16 / 9;
-  width: 100%;
-}
-.vsl-modal-bg {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(0.45);
-}
-.vsl-modal-shade {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 16px;
-}
-.vsl-live-badge {
-  font-size: 0.65rem;
-  font-weight: 800;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-.live-blink {
-  width: 7px;
-  height: 7px;
-  background: var(--red-primary);
-  border-radius: 50%;
-  animation: blinkDot 1.2s infinite;
-}
-.vsl-center-alert {
-  text-align: center;
-  color: #fff;
-}
-.gold-huge-play {
-  font-size: 3rem;
-  color: var(--gold-primary);
-  margin-bottom: 8px;
-  filter: drop-shadow(0 0 20px var(--gold-glow));
-}
-.vsl-center-alert p {
-  font-family: var(--font-heading);
-  font-size: 1.1rem;
-  font-weight: 800;
-}
-.vsl-center-alert small {
-  color: var(--gold-light);
-  font-size: 0.75rem;
-}
-.vsl-progress-wrapper {
-  width: 100%;
-  height: 4px;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 2px;
-  overflow: hidden;
-}
-.vsl-progress-bar-moving {
-  width: 50%;
-  height: 100%;
-  background: var(--gold-gradient);
-  animation: barMove 15s linear infinite;
-}
-@keyframes barMove {
-  0% { width: 0%; }
-  100% { width: 100%; }
-}
+
 
 /* ========================================================
    DESKTOP & TABLET ENHANCEMENTS (>= 768px)
@@ -2129,41 +1904,42 @@ body {
                 linear-gradient(180deg, rgba(4, 4, 6, 0.4) 0%, transparent 20%, rgba(4, 4, 6, 0.95) 100%);
   }
   .hero-layout-grid {
-    display: grid;
-    grid-template-columns: 1.15fr 1fr;
-    gap: 70px;
+    display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
+    width: 100%;
+    min-height: 520px;
+    padding: 30px 0;
   }
   .hero-info-col {
-    max-width: 640px;
+    max-width: 720px;
     margin: 0;
     text-align: left;
     align-items: flex-start;
   }
   .hero-main-title {
-    font-size: 3.1rem;
+    font-size: 3.2rem;
     line-height: 1.12;
     text-align: left;
   }
   .hero-description {
-    font-size: 1.08rem;
+    font-size: 1.1rem;
     text-align: left;
-    margin-bottom: 26px;
+    margin-bottom: 28px;
     padding: 0;
-    max-width: 580px;
+    max-width: 620px;
   }
   .hero-cta-immediate,
   .hero-cta-group {
     align-items: flex-start;
     justify-content: flex-start;
-    margin: 0 0 24px 0;
+    margin: 0 0 26px 0;
   }
   .btn-gold-action {
     max-width: 440px;
     margin: 0;
-    padding: 19px 30px;
-    font-size: 1.02rem;
+    padding: 20px 32px;
+    font-size: 1.05rem;
   }
   .hero-micro-trust {
     justify-content: flex-start;
@@ -2171,12 +1947,12 @@ body {
   .trust-grid-2x2 {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    max-width: 100%;
+    gap: 12px;
+    max-width: 680px;
     margin: 0;
   }
   .trust-cell {
-    padding: 12px 10px;
+    padding: 14px 12px;
     flex-direction: column;
     text-align: center;
     align-items: center;
@@ -2185,80 +1961,10 @@ body {
     margin-bottom: 4px;
   }
   .cell-text strong {
-    font-size: 0.74rem;
+    font-size: 0.76rem;
   }
   .cell-text small {
-    font-size: 0.62rem;
-  }
-
-  .hero-video-col {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    width: 100%;
-  }
-  .hero-video-stage {
-    position: relative;
-    width: 100%;
-    max-width: 620px;
-    margin-left: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .hero-stage-creator-backdrop {
-    display: block;
-    position: absolute;
-    top: -120px;
-    right: -20px;
-    width: 380px;
-    height: 560px;
-    z-index: 1;
-    pointer-events: none;
-    opacity: 0.95;
-  }
-  .hero-stage-creator-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: top center;
-    mask-image: linear-gradient(180deg, #000 68%, transparent 100%);
-    -webkit-mask-image: linear-gradient(180deg, #000 68%, transparent 100%);
-    filter: contrast(1.08) brightness(1.02);
-  }
-  .hero-stage-creator-glow {
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 300px;
-    height: 300px;
-    background: radial-gradient(circle, rgba(229, 169, 60, 0.3) 0%, transparent 70%);
-    filter: blur(65px);
-  }
-  .vsl-hero-prominent {
-    position: relative;
-    z-index: 3;
-    width: 100%;
-    max-width: 600px;
-    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.98), 0 0 45px rgba(229, 169, 60, 0.22);
-  }
-  .hero-stage-author-tag {
-    position: relative;
-    z-index: 3;
-    margin-top: 16px;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: rgba(10, 10, 15, 0.9);
-    border: 1px solid var(--border-gold);
-    border-radius: 30px;
-    padding: 7px 18px;
-    font-size: 0.78rem;
-    font-weight: 800;
-    color: var(--gold-light);
-    backdrop-filter: blur(12px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.85);
+    font-size: 0.64rem;
   }
   
   /* Belief Cards in 2x2 grid */
