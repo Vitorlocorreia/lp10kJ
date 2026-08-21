@@ -1937,19 +1937,19 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center left;
-    filter: contrast(1.06) brightness(0.92);
+    object-position: center right;
+    filter: contrast(1.06) brightness(0.9);
   }
   .hero-desktop-bg-shade {
     position: absolute;
     inset: 0;
-    background: linear-gradient(90deg, rgba(4, 4, 6, 0.85) 0%, rgba(4, 4, 6, 0.4) 45%, rgba(4, 4, 6, 0.92) 100%),
+    background: linear-gradient(90deg, rgba(4, 4, 6, 0.92) 0%, rgba(4, 4, 6, 0.6) 45%, rgba(4, 4, 6, 0.3) 100%),
                 linear-gradient(180deg, rgba(4, 4, 6, 0.4) 0%, transparent 25%, rgba(4, 4, 6, 0.95) 100%);
   }
   .hero-layout-grid {
     display: grid;
-    grid-template-columns: 1.12fr 0.88fr;
-    gap: 48px;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 44px;
     align-items: center;
   }
   .hero-info-col {
@@ -1984,19 +1984,95 @@ body {
     justify-content: flex-start;
   }
   .trust-grid-2x2 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
     max-width: 100%;
     margin: 0;
   }
+  .trust-cell {
+    padding: 10px 8px;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+  .trust-cell i {
+    margin-bottom: 4px;
+  }
+  .cell-text strong {
+    font-size: 0.74rem;
+  }
+  .cell-text small {
+    font-size: 0.62rem;
+  }
+
   .hero-video-col {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
   }
+  .hero-video-stage {
+    position: relative;
+    width: 100%;
+    max-width: 580px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .hero-stage-creator-backdrop {
+    display: block;
+    position: absolute;
+    top: -100px;
+    right: -25px;
+    width: 340px;
+    height: 500px;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.88;
+  }
+  .hero-stage-creator-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    mask-image: linear-gradient(180deg, #000 65%, transparent 100%);
+    -webkit-mask-image: linear-gradient(180deg, #000 65%, transparent 100%);
+    filter: contrast(1.08) brightness(1);
+  }
+  .hero-stage-creator-glow {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 260px;
+    height: 260px;
+    background: radial-gradient(circle, rgba(229, 169, 60, 0.28) 0%, transparent 70%);
+    filter: blur(55px);
+  }
   .vsl-hero-prominent {
-    max-width: 100%;
-    margin: 0;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.95), 0 0 35px rgba(229, 169, 60, 0.18);
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    max-width: 560px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.95), 0 0 35px rgba(229, 169, 60, 0.2);
+  }
+  .hero-stage-author-tag {
+    position: relative;
+    z-index: 3;
+    margin-top: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(10, 10, 15, 0.88);
+    border: 1px solid var(--border-gold);
+    border-radius: 30px;
+    padding: 6px 16px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: var(--gold-light);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
   }
   
   /* Belief Cards in 2x2 grid */
