@@ -242,53 +242,60 @@ body {
 }
 
 /* ========================================================
-   SEÇÃO 1: HERO SECTION (ABOVE THE FOLD)
+   SEÇÃO 1: HERO SECTION (FULL-BLEED CINEMATIC)
 ======================================================== */
 .section-hero {
-  padding-top: 20px;
-  padding-bottom: 40px;
   position: relative;
+  padding-top: 240px;
+  padding-bottom: 40px;
   overflow: hidden;
+  background-color: var(--bg-pure-black);
 }
 
-.hero-creator-banner {
-  position: relative;
+.hero-bg-creator-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  max-width: 420px;
-  height: 330px;
-  margin: 0 auto -24px auto;
+  height: 480px;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
   display: flex;
-  align-items: flex-start;
   justify-content: center;
-  background: transparent;
-  border: none;
-  box-shadow: none;
 }
-.hero-creator-img {
+
+.hero-bg-creator-img {
   width: 100%;
+  max-width: 480px;
   height: 100%;
   object-fit: cover;
   object-position: top center;
-  filter: contrast(1.05) brightness(1);
-  mask-image: linear-gradient(180deg, #000 65%, transparent 100%);
-  -webkit-mask-image: linear-gradient(180deg, #000 65%, transparent 100%);
+  filter: contrast(1.05) brightness(0.98);
+  mask-image: linear-gradient(180deg, #000 35%, rgba(0,0,0,0.85) 60%, transparent 100%);
+  -webkit-mask-image: linear-gradient(180deg, #000 35%, rgba(0,0,0,0.85) 60%, transparent 100%);
 }
-.hero-creator-gradient {
+
+.hero-bg-dark-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, transparent 40%, rgba(5, 5, 7, 0.7) 80%, var(--bg-pure-black) 100%);
-  pointer-events: none;
+  background: linear-gradient(180deg, rgba(5,5,7,0.1) 0%, rgba(5,5,7,0.4) 40%, rgba(5,5,7,0.92) 80%, var(--bg-pure-black) 100%);
 }
-.hero-creator-glow {
+
+.hero-bg-ambient-glow {
   position: absolute;
-  top: 30%;
+  top: 20%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 280px;
-  height: 280px;
-  background: radial-gradient(circle, rgba(229, 169, 60, 0.18) 0%, transparent 70%);
-  filter: blur(50px);
-  pointer-events: none;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(229, 169, 60, 0.2) 0%, transparent 70%);
+  filter: blur(60px);
+}
+
+.hero-content-relative {
+  position: relative;
+  z-index: 2;
 }
 
 .hero-info-col {
