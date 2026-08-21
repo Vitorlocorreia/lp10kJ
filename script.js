@@ -373,4 +373,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // ========================================================
+  // 6. FLOATING MOBILE CTA BAR VISIBILITY
+  // ========================================================
+  const floatingCta = document.getElementById('floatingCta');
+  if (floatingCta) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 420) {
+        floatingCta.classList.add('visible');
+      } else {
+        floatingCta.classList.remove('visible');
+      }
+    }, { passive: true });
+  }
+
 });
+
+

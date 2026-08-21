@@ -6,10 +6,10 @@
   <title>Método PQP — Conquiste 10K Seguidores em 30 Dias | Jorge Moura</title>
   <meta name="description" content="Conquiste seus primeiros 10 mil seguidores em 30 dias, ou eu devolvo 100% do seu dinheiro. Sem tráfego pago, sem passar vergonha." />
 
-  <!-- Google Fonts -->
+  <!-- Google Fonts: Outfit & Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&family=Syne:wght@700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,700&display=swap" rel="stylesheet">
   
   <!-- FontAwesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
@@ -23,16 +23,8 @@
   <div class="ambient-glow glow-center"></div>
   <div class="ambient-glow glow-bottom"></div>
 
-  <!-- Announcement Bar -->
-  <div class="announcement-bar">
-    <div class="site-container announcement-inner">
-      <span class="live-dot"></span>
-      <p>NOVA TURMA 2026 LIBERADA • VAGAS COM CONDIÇÃO ESPECIAL DE R$ 29,90</p>
-    </div>
-  </div>
-
   <!-- Main Navigation -->
-  <nav class="main-navbar">
+  <nav class="main-navbar" id="navbar">
     <div class="site-container nav-inner">
       <a href="#hero" class="nav-brand">
         <span class="brand-bolt"><i class="fa-solid fa-bolt"></i></span>
@@ -54,18 +46,11 @@
   </nav>
 
   <!-- ========================================================
-       SEÇÃO 1: HERO + VSL
+       SEÇÃO 1: HERO (ABOVE THE FOLD OTIMIZADO)
   ======================================================== -->
   <header class="section-hero" id="hero">
     <div class="site-container">
       
-      <!-- Mobile Creator Banner on Top -->
-      <div class="hero-creator-banner">
-        <img src="assets/hero_creator.jpg" alt="Jorge Moura - Método PQP" class="hero-creator-img" />
-        <div class="hero-creator-gradient"></div>
-        <div class="hero-creator-glow"></div>
-      </div>
-
       <div class="hero-layout-grid">
         <div class="hero-info-col">
           
@@ -83,10 +68,23 @@
             Sem tráfego pago, sem passar vergonha, com um método que já ajudou <strong>+100 empresários</strong> a crescerem no Instagram.
           </p>
 
-          <!-- VSL Player Component -->
+          <!-- Immediate Action CTA Button (Visible Above the Fold) -->
+          <div class="hero-cta-group hero-cta-immediate">
+            <a href="#oferta" class="btn-gold-action pulse-anim">
+              <span class="btn-text">QUERO MEUS 10 MIL SEGUIDORES</span>
+              <span class="btn-arrow-icon"><i class="fa-solid fa-arrow-right"></i></span>
+              <div class="btn-gold-shine"></div>
+            </a>
+            <div class="hero-micro-trust">
+              <i class="fa-solid fa-circle-check gold-icon"></i>
+              <span>Acesso imediato • 100% pelo celular • 30 dias de garantia</span>
+            </div>
+          </div>
+
+          <!-- Creator Visual Preview / VSL Component -->
           <div class="vsl-module" id="vslModule">
             <div class="vsl-viewport">
-              <img src="assets/vsl_preview.jpg" alt="Assistir Masterclass Método PQP" class="vsl-thumb" />
+              <img src="assets/vsl_preview.jpg" alt="Assistir Apresentação do Método PQP" class="vsl-thumb" />
               <div class="vsl-vignette"></div>
               
               <div class="vsl-play-button">
@@ -113,19 +111,6 @@
                 <span><i class="fa-solid fa-shield-halved gold-icon"></i> Método Validado 2026</span>
                 <span><i class="fa-solid fa-circle-check gold-icon"></i> 4K ULTRA HD</span>
               </div>
-            </div>
-          </div>
-
-          <!-- Hero Action CTA -->
-          <div class="hero-cta-group">
-            <a href="#oferta" class="btn-gold-action pulse-anim">
-              <span class="btn-text">QUERO MEUS 10 MIL SEGUIDORES</span>
-              <span class="btn-arrow-icon"><i class="fa-solid fa-arrow-right"></i></span>
-              <div class="btn-gold-shine"></div>
-            </a>
-            <div class="hero-micro-trust">
-              <i class="fa-solid fa-circle-check gold-icon"></i>
-              <span>Acesso imediato • 100% pelo celular • 30 dias de garantia</span>
             </div>
           </div>
 
@@ -367,7 +352,7 @@
   </section>
 
   <!-- ========================================================
-       SEÇÃO 4: DEPOIMENTOS & PROVAS REAIS (CARROSSEL)
+       SEÇÃO 4: DEPOIMENTOS & PROVAS REAIS (CARROSSEL RESPONSIVO)
   ======================================================== -->
   <section class="section-block proof-section-wrapper" id="depoimentos">
     <div class="site-container">
@@ -972,9 +957,21 @@
     </div>
   </section>
 
-  <!-- ========================================================
-       FOOTER
-  ======================================================== -->
+  <!-- Floating Sticky Mobile CTA Bar -->
+  <div class="floating-mobile-cta" id="floatingCta">
+    <div class="floating-cta-inner">
+      <div class="floating-price-mini">
+        <small>De R$ 197 por</small>
+        <strong>R$ 29,90</strong>
+      </div>
+      <a href="https://pay.kirvano.com/047c7665-a1d3-4a59-91e5-7eea15fe704d" class="btn-gold-action btn-floating-bar kirvano-checkout-link" target="_blank" rel="noopener noreferrer">
+        <span>Garantir Vaga</span>
+        <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </div>
+  </div>
+
+  <!-- Footer -->
   <footer class="site-page-footer">
     <div class="site-container footer-flex-container">
       <div class="footer-brand-logo">
