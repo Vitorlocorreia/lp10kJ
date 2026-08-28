@@ -75,6 +75,17 @@ document.addEventListener('DOMContentLoaded', () => {
       } catch (err) {
         console.error('Erro ao repassar UTM para o link:', link, err);
       }
+
+      // Rastreia evento de InitiateCheckout no Meta Pixel ao clicar para comprar
+      link.addEventListener('click', () => {
+        if (typeof window.fbq === 'function') {
+          window.fbq('track', 'InitiateCheckout', {
+            content_name: 'Método PQP — 10K em 30 Dias',
+            value: 29.90,
+            currency: 'BRL'
+          });
+        }
+      });
     });
   }
 
