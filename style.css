@@ -1500,10 +1500,45 @@ body {
 .cash-price-row {
   font-size: 0.92rem;
   color: var(--text-muted);
-  margin-bottom: 18px;
+  margin-bottom: 10px;
 }
 .cash-price-row strong {
   color: var(--gold-light);
+}
+.payment-type-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(243, 178, 54, 0.08);
+  border: 1px solid rgba(243, 178, 54, 0.3);
+  border-radius: 30px;
+  padding: 5px 14px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--gold-light);
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+.instant-delivery-pill {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 10px 14px;
+  margin-bottom: 16px;
+  width: 100%;
+  max-width: 440px;
+  text-align: left;
+}
+.delivery-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: #e5e7eb;
 }
 .checkout-btn-full {
   margin-bottom: 14px;
@@ -1709,6 +1744,14 @@ body {
 }
 .closing-price-tag strong {
   color: var(--gold-light);
+}
+.closing-single-payment-hint {
+  display: block;
+  font-size: 0.76rem;
+  color: var(--gold-light);
+  font-weight: 700;
+  margin-top: 5px;
+  letter-spacing: 0.4px;
 }
 
 .closing-cta-wrap {
