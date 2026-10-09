@@ -57,6 +57,7 @@
         <a href="#sobre-jorge">Quem Criou</a>
         <a href="#conteudo">O Que Recebe</a>
         <a href="#faq">Dúvidas</a>
+        <a href="#formulario">Aplicação</a>
       </div>
       <a href="#oferta" class="nav-cta-btn">
         <span>Garantir Vaga</span>
@@ -1005,6 +1006,147 @@
           </div>
         </div>
 
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================
+       SEÇÃO: FORMULÁRIO DE APLICAÇÃO / DIAGNÓSTICO
+  ======================================================== -->
+  <section class="section-block form-section-wrap" id="formulario">
+    <div class="site-container">
+      
+      <div class="form-container-card">
+        <div class="form-card-header text-center">
+          <div class="badge-tag gold-tag">
+            <i class="fa-solid fa-chart-line"></i>
+            <span>DIAGNÓSTICO E APLICAÇÃO</span>
+          </div>
+          <h2 class="section-title">
+            Dê o próximo passo com o <br />
+            <span class="gold-gradient-text glow-effect">Jorge Moura e o Grupo Jota</span>
+          </h2>
+          <p class="section-subtitle">
+            Preencha as informações abaixo para avaliarmos o momento do seu negócio e entrarmos em contato.
+          </p>
+        </div>
+
+        <form class="lead-capture-form" id="leadForm" autocomplete="on">
+          <div class="form-grid-fields">
+            
+            <!-- 1. Nome -->
+            <div class="form-field-group">
+              <label for="formNome" class="form-label">
+                <i class="fa-solid fa-user gold-icon"></i> Nome Completo
+              </label>
+              <input 
+                type="text" 
+                id="formNome" 
+                name="nome" 
+                class="form-input" 
+                placeholder="Seu nome completo" 
+                required 
+              />
+            </div>
+
+            <!-- 2. Nome da Empresa -->
+            <div class="form-field-group">
+              <label for="formEmpresa" class="form-label">
+                <i class="fa-solid fa-building gold-icon"></i> Nome da Empresa
+              </label>
+              <input 
+                type="text" 
+                id="formEmpresa" 
+                name="empresa" 
+                class="form-input" 
+                placeholder="Nome da sua empresa / negócio" 
+                required 
+              />
+            </div>
+
+            <!-- 3. Telefone -->
+            <div class="form-field-group">
+              <label for="formTelefone" class="form-label">
+                <i class="fa-brands fa-whatsapp gold-icon"></i> Telefone / WhatsApp
+              </label>
+              <input 
+                type="tel" 
+                id="formTelefone" 
+                name="telefone" 
+                class="form-input" 
+                placeholder="(00) 00000-0000" 
+                maxlength="15"
+                required 
+              />
+            </div>
+
+            <!-- 4. E-mail -->
+            <div class="form-field-group">
+              <label for="formEmail" class="form-label">
+                <i class="fa-solid fa-envelope gold-icon"></i> E-mail
+              </label>
+              <input 
+                type="email" 
+                id="formEmail" 
+                name="email" 
+                class="form-input" 
+                placeholder="seuemail@empresa.com.br" 
+                required 
+              />
+            </div>
+
+            <!-- 5. Faixa de Faturamento -->
+            <div class="form-field-group form-field-full">
+              <label for="formFaturamento" class="form-label">
+                <i class="fa-solid fa-sack-dollar gold-icon"></i> Faixa de Faturamento Mensal
+              </label>
+              <div class="select-wrapper">
+                <select id="formFaturamento" name="faturamento" class="form-select" required>
+                  <option value="" disabled selected>Selecione a faixa de faturamento da sua empresa...</option>
+                  <option value="Ate R$ 10.000 / mes">Até R$ 10.000 / mês</option>
+                  <option value="R$ 10.000 a R$ 30.000 / mes">R$ 10.000 a R$ 30.000 / mês</option>
+                  <option value="R$ 30.000 a R$ 50.000 / mes">R$ 30.000 a R$ 50.000 / mês</option>
+                  <option value="R$ 50.000 a R$ 100.000 / mes">R$ 50.000 a R$ 100.000 / mês</option>
+                  <option value="Acima de R$ 100.000 / mes">Acima de R$ 100.000 / mês</option>
+                </select>
+                <i class="fa-solid fa-chevron-down select-arrow"></i>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Submit Button & Feedback -->
+          <div class="form-action-wrap">
+            <button type="submit" class="btn-gold-action pulse-anim btn-form-submit" id="btnFormSubmit">
+              <span class="btn-text">ENVIAR APLICAÇÃO</span>
+              <span class="btn-arrow-icon"><i class="fa-solid fa-arrow-right"></i></span>
+              <div class="btn-gold-shine"></div>
+            </button>
+            <p class="form-privacy-note">
+              <i class="fa-solid fa-lock"></i> Seus dados estão 100% seguros. Não compartilhamos informações.
+            </p>
+          </div>
+
+          <!-- Alert de Sucesso -->
+          <div class="form-alert-feedback form-alert-success" id="formSuccessAlert" style="display: none;">
+            <i class="fa-solid fa-circle-check"></i>
+            <div>
+              <strong>Aplicação enviada com sucesso!</strong>
+              <p>Recebemos suas informações. Nossa equipe entrará em contato em breve.</p>
+            </div>
+          </div>
+
+          <!-- Alert de Erro -->
+          <div class="form-alert-feedback form-alert-error" id="formErrorAlert" style="display: none;">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <div>
+              <strong>Ocorreu um erro no envio.</strong>
+              <p>Por favor, verifique os campos ou tente novamente em alguns instantes.</p>
+            </div>
+          </div>
+
+        </form>
       </div>
 
     </div>

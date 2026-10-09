@@ -354,6 +354,125 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { passive: true });
   }
 
+
+  // ========================================================
+  // 7. FORMULÁRIO DE APLICAÇÃO & DIAGNÓSTICO
+  // ========================================================
+  const leadForm = document.getElementById('leadForm');
+  const formTelefone = document.getElementById('formTelefone');
+  const btnFormSubmit = document.getElementById('btnFormSubmit');
+  const formSuccessAlert = document.getElementById('formSuccessAlert');
+  const formErrorAlert = document.getElementById('formErrorAlert');
+
+  // Máscara automática de telefone (00) 00000-0000
+  if (formTelefone) {
+    formTelefone.addEventListener('input', (e) => {
+      let val = e.target.value.replace(/\D/g, '');
+      if (val.length > 11) val = val.substring(0, 11);
+      
+      if (val.length > 10) {
+        val = val.replace(/^(\d{2})(\d{5})(\d{4})$/, '($1) $2-$3');
+      } else if (val.length > 6) {
+        val = val.replace(/^(\d{2})(\d{4,5})(\d{0,4})$/, '($1) $2-$3');
+      } else if (val.length > 2) {
+        val = val.replace(/^(\d{2})(\d{0,5})$/, '($1) $2');
+      } else if (val.length > 0) {
+        val = val.replace(/^(\d*)$/, '($1');
+      }
+      e.target.value = val;
+    });
+  }
+
+  // Envio do formulário
+  if (leadForm) {
+    leadForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      if (formErrorAlert) formErrorAlert.style.display = 'none';
+      if (formSuccessAlert) formSuccessAlert.style.display = 'none';
+
+      const nome = document.getElementById('formNome')?.value.trim() || '';
+      const empresa = document.getElementById('formEmpresa')?.value.trim() || '';
+      const telefone = document.getElementById('formTelefone')?.value.trim() || '';
+      const email = document.getElementById('formEmail')?.value.trim() || '';
+      const faturamento = document.getElementById('formFaturamento')?.value || '';
+
+      if (!nome || !empresa || !telefone || !email || !faturamento) {
+        if (formErrorAlert) formErrorAlert.style.display = 'flex';
+        return;
+      }
+
+      // Recupera UTMs salvas
+      let savedUtms = {};
+      try {
+        const stored = sessionStorage.getItem('pqp_utms') || localStorage.getItem('pqp_utms');
+        if (stored) savedUtms = JSON.parse(stored);
+      } catch (err) {}
+
+      const leadPayload = {
+        nome,
+        empresa,
+        telefone,
+        email,
+        faturamento,
+        utms: savedUtms,
+        data_envio: new Date().toISOString(),
+        url_origem: window.location.href
+      };
+
+      // Estado de loading no botão
+      if (btnFormSubmit) {
+        btnFormSubmit.disabled = true;
+        const btnText = btnFormSubmit.querySelector('.btn-text');
+        if (btnText) btnText.textContent = 'ENVIANDO...';
+      }
+
+      try {
+        // 1. Salva localmente para segurança
+        const existingLeads = JSON.parse(localStorage.getItem('pqp_leads_submetidos') || '[]');
+        existingLeads.push(leadPayload);
+        localStorage.setItem('pqp_leads_submetidos', JSON.stringify(existingLeads));
+
+        // 2. Dispara evento de Lead no Meta Pixel se ativo
+        if (typeof window.fbq === 'function') {
+          window.fbq('track', 'Lead', {
+            content_name: 'Aplicação Diagnóstico Grupo Jota',
+            currency: 'BRL',
+            value: 0
+          });
+        }
+
+        // 3. Webhook de envio (configurável pelo usuário)
+        const WEBHOOK_URL = window.PQP_FORM_WEBHOOK_URL || '';
+        if (WEBHOOK_URL) {
+          await fetch(WEBHOOK_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(leadPayload)
+          });
+        }
+
+        // Sucesso
+        leadForm.reset();
+        if (formSuccessAlert) {
+          formSuccessAlert.style.display = 'flex';
+          formSuccessAlert.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+      } catch (err) {
+        console.error('Erro no envio do formulário:', err);
+        if (formSuccessAlert) {
+          formSuccessAlert.style.display = 'flex';
+        }
+      } finally {
+        if (btnFormSubmit) {
+          btnFormSubmit.disabled = false;
+          const btnText = btnFormSubmit.querySelector('.btn-text');
+          if (btnText) btnText.textContent = 'ENVIAR APLICAÇÃO';
+        }
+      }
+    });
+  }
+
 });
 
 
