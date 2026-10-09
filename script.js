@@ -258,7 +258,7 @@ document.addEventListener('DOMContentLoaded', () => {
     startAutoPlay();
   }
 
-  startAutoPlay();
+  if (totalSlides > 1) startAutoPlay();
 
 
   // ========================================================
@@ -383,13 +383,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Envio do formulário
+  // Confirm success only after the destination accepts the submission.
   if (leadForm) {
+    const defaultSubmitText = btnFormSubmit?.querySelector('.btn-text')?.textContent;
     leadForm.addEventListener('submit', async (e) => {
       e.preventDefault();
+      if (btnFormSubmit?.disabled) return;
 
       if (formErrorAlert) formErrorAlert.style.display = 'none';
       if (formSuccessAlert) formSuccessAlert.style.display = 'none';
+      if (!leadForm.reportValidity()) return;
+      if (leadForm.elements.namedItem('_honey')?.value) return;
 
       const nome = document.getElementById('formNome')?.value.trim() || '';
       const empresa = document.getElementById('formEmpresa')?.value.trim() || '';
@@ -397,7 +401,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const email = document.getElementById('formEmail')?.value.trim() || '';
       const faturamento = document.getElementById('formFaturamento')?.value || '';
 
-      if (!nome || !empresa || !telefone || !email || !faturamento) {
+      if (!nome || !empresa || !email || !faturamento || !/^\d{10,11}$/.test(telefone.replace(/\D/g, ''))) {
         if (formErrorAlert) formErrorAlert.style.display = 'flex';
         return;
       }
@@ -424,50 +428,63 @@ document.addEventListener('DOMContentLoaded', () => {
       if (btnFormSubmit) {
         btnFormSubmit.disabled = true;
         const btnText = btnFormSubmit.querySelector('.btn-text');
-        if (btnText) btnText.textContent = 'ENVIANDO...';
+        if (btnText) btnText.textContent = 'Enviando sua inscrição...';
       }
+      leadForm.setAttribute('aria-busy', 'true');
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 20000);
 
       try {
-        // 1. Salva localmente para segurança
-        const existingLeads = JSON.parse(localStorage.getItem('pqp_leads_submetidos') || '[]');
-        existingLeads.push(leadPayload);
-        localStorage.setItem('pqp_leads_submetidos', JSON.stringify(existingLeads));
-
-        // 2. Dispara evento de Lead no Meta Pixel se ativo
-        if (typeof window.fbq === 'function') {
-          window.fbq('track', 'Lead', {
-            content_name: 'Aplicação Diagnóstico Grupo Jota',
-            currency: 'BRL',
-            value: 0
-          });
+        const webhookUrl = window.PQP_FORM_WEBHOOK_URL || '';
+        const destination = webhookUrl || 'https://formsubmit.co/ajax/jorgemourajotaempresarial@gmail.com';
+        const payload = webhookUrl ? leadPayload : {
+          ...leadPayload,
+          utms: JSON.stringify(savedUtms),
+          _subject: 'Nova inscrição — Call com o Jorge',
+          _template: 'table',
+          _honey: ''
+        };
+        const response = await fetch(destination, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(payload),
+          signal: controller.signal
+        });
+        if (!response.ok) throw new Error('Submission was not accepted');
+        if (!webhookUrl) {
+          const result = await response.json();
+          if (result.success !== true && result.success !== 'true') {
+            throw new Error('Email service did not accept the submission');
+          }
         }
 
-        // 3. Webhook de envio (configurável pelo usuário)
-        const WEBHOOK_URL = window.PQP_FORM_WEBHOOK_URL || '';
-        if (WEBHOOK_URL) {
-          await fetch(WEBHOOK_URL, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(leadPayload)
-          });
-        }
-
-        // Sucesso
         leadForm.reset();
         if (formSuccessAlert) {
           formSuccessAlert.style.display = 'flex';
           formSuccessAlert.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          formSuccessAlert.focus({ preventScroll: true });
+        }
+        // Analytics must not affect a submission that already succeeded.
+        try {
+          if (typeof window.fbq === 'function') {
+            window.fbq('track', 'Lead', { content_name: 'Sorteio — Call com o Jorge', currency: 'BRL', value: 0 });
+          }
+        } catch (err) {
+          console.warn('Lead analytics unavailable');
         }
       } catch (err) {
-        console.error('Erro no envio do formulário:', err);
-        if (formSuccessAlert) {
-          formSuccessAlert.style.display = 'flex';
+        console.error('Não foi possível enviar a inscrição.');
+        if (formErrorAlert) {
+          formErrorAlert.style.display = 'flex';
+          formErrorAlert.focus({ preventScroll: true });
         }
       } finally {
+        clearTimeout(timeout);
+        leadForm.removeAttribute('aria-busy');
         if (btnFormSubmit) {
           btnFormSubmit.disabled = false;
           const btnText = btnFormSubmit.querySelector('.btn-text');
-          if (btnText) btnText.textContent = 'ENVIAR APLICAÇÃO';
+          if (btnText) btnText.textContent = defaultSubmitText;
         }
       }
     });

